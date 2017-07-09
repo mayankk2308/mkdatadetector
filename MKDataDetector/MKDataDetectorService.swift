@@ -33,27 +33,5 @@ public class MKDataDetectorService {
     public func reset() {
         textBodies.removeAll()
     }
-    
-    public func analyze(withResultType type: ResultType, completion: (_ success: Bool, _ result: AnalysisResult<Any>) -> Void) {
-        switch type {
-        case .address:
-            break
-        case .correction:
-            break
-        case .date:
-            break
-        case .grammar:
-            break
-        case .link:
-            break
-        case .phoneNumber:
-            break
-        case .replacement:
-            break
-        case .spelling:
-            break
-        case .transitInformation:
-            break
-        }
-    }
+
 }

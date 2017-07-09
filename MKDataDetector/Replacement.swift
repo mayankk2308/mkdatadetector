@@ -10,4 +10,8 @@ import Foundation
 
 extension MKDataDetectorService {
     
+    public func analyzeForSymbols() {
+        // TODO
+    }
+    
 }

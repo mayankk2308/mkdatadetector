@@ -9,5 +9,9 @@
 import Foundation
 
 extension MKDataDetectorService {
+ 
+    public func analyzeForCorrections() {
+        // TODO
+    }
     
 }
