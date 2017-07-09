@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum ResultType {
+public enum ResultType {
     case spelling, grammar, date, address, link, replacement, correction, phoneNumber, transitInformation
 }
