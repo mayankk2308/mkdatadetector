@@ -38,11 +38,19 @@ Or provide multiple text bodies (`[String]`) for analysis:
 ```swift
 let dataDetector: MKDataDetectorService = MKDataDetectorService(textBodies: [<someText>, <someText>, ...])
 ```
+
 For more dynamic implementations, you can add text bodies later:
 ```swift
 dataDetector.addTextBody(textBody: <someText>)
 dataDetector.addTextBodies(textBodies: [<someText>, <someText>, ...])
 ```
+
+To restore the state of the service for reuse:
+```swift
+dataDetector.reset()
+```
+
+This removes all previously added or used text bodies.
 
 ### Performing Analysis
 
