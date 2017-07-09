@@ -20,9 +20,19 @@ To keep things simple, `MKDataDetector` is packaged alongside a convenient enume
 * Correction (`ResultType.correction`) - spell-correction suggestions
 * Transit Information (`ResultType.transitInformation`) - flight information, etc.
 
-You can ordinarily declare an instance as follows:
+You can declare an instance as follows:
 ```swift
-let dataDetector: MKDataDetector = MKDataDetector()
+let dataDetector: MKDataDetectorService = MKDataDetectorService()
+```
+
+Or provide a text body for analysis:
+```swift
+let dataDetector: MKDataDetectorService = MKDataDetectorService(textBody: <someText>)
+```
+
+Or provide multiple text bodies for analysis:
+```swift
+let dataDetector: MKDataDetectorService = MKDataDetectorService(textBodies: [<someText>, <someText>, ...])
 ```
 
 Further usage to be determined.
