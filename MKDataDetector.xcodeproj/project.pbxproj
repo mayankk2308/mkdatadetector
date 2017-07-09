@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A874CD001F10F3260022AA85 /* MKDataDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = A874CCFE1F10F3260022AA85 /* MKDataDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A874CD081F10F5B50022AA85 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874CD071F10F5B50022AA85 /* ResultType.swift */; };
+		A874CD0A1F11011E0022AA85 /* MKDataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874CD091F11011E0022AA85 /* MKDataDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A874CCFB1F10F3260022AA85 /* MKDataDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKDataDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A874CCFE1F10F3260022AA85 /* MKDataDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKDataDetector.h; sourceTree = "<group>"; };
 		A874CCFF1F10F3260022AA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A874CD071F10F5B50022AA85 /* ResultType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		A874CD091F11011E0022AA85 /* MKDataDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKDataDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 		A874CCFD1F10F3260022AA85 /* MKDataDetector */ = {
 			isa = PBXGroup;
 			children = (
+				A874CD091F11011E0022AA85 /* MKDataDetector.swift */,
+				A874CD071F10F5B50022AA85 /* ResultType.swift */,
 				A874CD061F10F3370022AA85 /* Configuration */,
 			);
 			path = MKDataDetector;
@@ -104,6 +110,7 @@
 					A874CCFA1F10F3260022AA85 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = YF7XP6ZYSQ;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -140,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A874CD081F10F5B50022AA85 /* ResultType.swift in Sources */,
+				A874CD0A1F11011E0022AA85 /* MKDataDetector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +260,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YF7XP6ZYSQ;
@@ -263,6 +273,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mayank.MKDataDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -271,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YF7XP6ZYSQ;
@@ -306,6 +318,7 @@
 				A874CD051F10F3260022AA85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
