@@ -5,7 +5,7 @@ Currently in the _**design phase**_.
 
 # Purpose
 
-While **Apple's** `NSDataDetector` is useful for extracting useful information from natural language text, I find it cumbersome to use a little difficult to adopt. To circumvent this issue, I am developing an encapsulating framework called 'MKDataDetector' to streamline the original API and simplify its usage and application.
+While **Apple's** `NSDataDetector` is useful for extracting useful information from natural language text, I find it cumbersome to use a little difficult to adopt. To circumvent this issue, I am developing an encapsulating framework called `MKDataDetector` to streamline the original API and simplify its usage and application.
 
 # Usage
 
