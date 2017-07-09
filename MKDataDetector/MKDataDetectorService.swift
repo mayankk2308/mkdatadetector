@@ -26,7 +26,15 @@ public class MKDataDetectorService {
         textBodies.append(textBody)
     }
     
-    public func analyze(withResultType type: ResultType) {
+    public func addTextBodies(textBodies: [String]) {
+        self.textBodies.append(contentsOf: textBodies)
+    }
+    
+    public func reset() {
+        textBodies.removeAll()
+    }
+    
+    public func analyze(withResultType type: ResultType, completion: (_ success: Bool, _ result: AnalysisResult<Any>) -> Void) {
         switch type {
         case .address:
             break

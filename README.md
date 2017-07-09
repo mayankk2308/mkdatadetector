@@ -1,5 +1,5 @@
 # **MKDataDetector for Swift**
-A simple convenience wrapper for data detection from language text.
+A simple convenience wrapper for data detection from natural language text.
 
 Currently in the _**design phase**_.
 
@@ -20,6 +20,10 @@ To keep things simple, `MKDataDetector` is packaged alongside a convenient enume
 * Correction (`ResultType.correction`) - spell-correction suggestions
 * Transit Information (`ResultType.transitInformation`) - flight information, etc.
 
+In addition to extracting these features, the framework also provides convenience functions to manipulate and organize this data.
+
+### Initialization
+
 You can declare an instance as follows:
 ```swift
 let dataDetector: MKDataDetectorService = MKDataDetectorService()
@@ -34,5 +38,20 @@ Or provide multiple text bodies (`[String]`) for analysis:
 ```swift
 let dataDetector: MKDataDetectorService = MKDataDetectorService(textBodies: [<someText>, <someText>, ...])
 ```
+For more dynamic implementations, you can add text bodies later:
+```swift
+dataDetector.addTextBody(textBody: <someText>)
+dataDetector.addTextBodies(textBodies: [<someText>, <someText>, ...])
+```
 
-Further usage to be determined.
+### Performing Analysis
+
+To facilitate and unify result handling, a simple ```AnalysisResult``` structure is returned via a completion handler:
+```swift
+dataDetector.analyze(ResultType.date) { success, result in
+    if success {
+        // do some stuff
+    }
+}
+```
+Further usage being decided upon.
