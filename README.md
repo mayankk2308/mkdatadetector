@@ -1,4 +1,7 @@
 # **MKDataDetector for Swift**
+A simple convenience wrapper for data detection from language text.
+
+Currently in the _**design phase**_.
 
 # Purpose
 
