@@ -25,12 +25,12 @@ You can declare an instance as follows:
 let dataDetector: MKDataDetectorService = MKDataDetectorService()
 ```
 
-Or provide a text body for analysis:
+Or provide a text body (`String`) for analysis:
 ```swift
 let dataDetector: MKDataDetectorService = MKDataDetectorService(textBody: <someText>)
 ```
 
-Or provide multiple text bodies for analysis:
+Or provide multiple text bodies (`[String]`) for analysis:
 ```swift
 let dataDetector: MKDataDetectorService = MKDataDetectorService(textBodies: [<someText>, <someText>, ...])
 ```
