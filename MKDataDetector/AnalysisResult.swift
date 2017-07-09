@@ -1,5 +1,5 @@
 //
-//  Spelling.swift
+//  AnalysisResult.swift
 //  MKDataDetector
 //
 //  Created by Mayank Kumar on 7/9/17.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-extension MKDataDetectorService {
-    
+public struct AnalysisResult<D> {
+    var sourceData: String
+    var extractedData: D
 }
