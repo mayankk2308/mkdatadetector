@@ -66,7 +66,7 @@ To extract dates from multiple sources of text (`[String]`):
 ```swift
 if let combinedResults = dataDetectorService.extractDates(withTextBodies: [<someText>, <someText>, ...]) {
     for individualResults in combinedResults where individualResults != nil {
-        for result in individualResults! {
+        for result in individualResults! where result != nil {
             print(result!.source)
             print(result!.date)
             // do some stuff
