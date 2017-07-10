@@ -1,7 +1,7 @@
 # **MKDataDetector for Swift**
 A simple convenience wrapper for data detection from natural language text.
 
-Currently in the _**design phase**_.
+Currently in the _**development phase**_.
 
 ## Purpose
 
@@ -13,10 +13,10 @@ To keep things simple, `MKDataDetector` is packaged as a set of extensions that 
 
 * Spelling - spell-checking
 * Grammar - grammar checking
-* Date - date(s) extraction
-* Address - address(es) extraction
-* Link - link(s) extraction
-* Replacement - symbol replacement, such as **(c) -> ©**
+* Date - date extraction
+* Address - address extraction
+* Link - link extraction
+* Replacement - symbol replacement, such as **(c) to ©**
 * Correction - spell-correction suggestions
 * Transit Information - flight information extraction, etc.
 
@@ -29,30 +29,45 @@ You can declare an instance as follows:
 let dataDetectorService: MKDataDetectorService = MKDataDetectorService()
 ```
 
-### Performing Analysis
+### Result Handling
 
 For convenience, a generic `AnalysisResult<T>` structure is consistently returned for extraction/analysis results.
 
-For instance, to extract dates from some text (`String`):
+`AnalysisResult<T>` contains two fields:
+* Source (`source`) - the source `String` from which data was detected
+* Data (`data`) - the data `T` extracted from the source input
+
+Additionally, for convenience, the generic struct has a `typealias` per result type:
+* `DateAnalysisResult` - for `AnalysisResult<Date>`
+* `URLAnalysisResult` - for `AnalysisResult<URL>`
+and so on.
+
+### Implementation
+
+To extract dates from some text (`String`):
 ```swift
 if let results = dataDetectorService.extractDates(withTextBody: <someText>) {
-    for result in results {
+    for result in results where result != nil {
+        print(result!.source)
+        print(result!.date)
         // do some stuff
     }
 }
 ```
+For a given `textBody`, the `dataDetectorService`returns an array of `DateAnalysisResult` objects.
 
-Or, to extract dates from multiple sources of text (`[String]`):
+To extract dates from multiple sources of text (`[String]`):
 ```swift
-if let results = dataDetectorService.extractDates(withTextBodies: [<someText>, <someText>, ...]) {
-    for textBodyResults in results {
-        if let tBResults = textBodyResults {
-            for result in tBResults {
-                // do some stuff
-            }
+if let combinedResults = dataDetectorService.extractDates(withTextBodies: [<someText>, <someText>, ...]) {
+    for individualResults in combinedResults where individualResults != nil {
+        for result in individualResults! {
+            print(result!.source)
+            print(result!.date)
+            // do some stuff
         }
     }
 }
 ```
+For given `textBodies`, the `dataDetectorService` returns an array of `[DateAnalysisResult]` objects.
 
-Further usage being decided upon.
+Similar pneumonic functions exist for other extractable data features.
