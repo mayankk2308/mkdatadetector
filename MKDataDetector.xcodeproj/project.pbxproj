@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A85D37F11F13677600F5DDF1 /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */; };
 		A874CD001F10F3260022AA85 /* MKDataDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = A874CCFE1F10F3260022AA85 /* MKDataDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A874CD0A1F11011E0022AA85 /* MKDataDetectorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874CD091F11011E0022AA85 /* MKDataDetectorService.swift */; };
 		A88DD8331F123B8A001D067A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8321F123B8A001D067A /* Date.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		A874CCFB1F10F3260022AA85 /* MKDataDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKDataDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A874CCFE1F10F3260022AA85 /* MKDataDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKDataDetector.h; sourceTree = "<group>"; };
 		A874CCFF1F10F3260022AA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				A874CD091F11011E0022AA85 /* MKDataDetectorService.swift */,
+				A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */,
 			);
 			name = "Core Services";
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				A88DD8451F12407C001D067A /* TransitInformation.swift in Sources */,
 				A88DD8411F12403C001D067A /* Link.swift in Sources */,
 				A88DD83D1F12401A001D067A /* Spelling.swift in Sources */,
+				A85D37F11F13677600F5DDF1 /* AnalysisResult.swift in Sources */,
 				A88DD83F1F124022001D067A /* Grammar.swift in Sources */,
 				A88DD8431F12406B001D067A /* Correction.swift in Sources */,
 			);

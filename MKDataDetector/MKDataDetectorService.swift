@@ -10,28 +10,10 @@ import Foundation
 
 public class MKDataDetectorService {
     
-    private var textBodies = [String]()
-    
     public init() {}
     
-    public init(textBody: String) {
-        textBodies.append(textBody)
-    }
-    
-    public init(textBodies: [String]) {
-        self.textBodies = textBodies
-    }
-    
-    public func addTextBody(textBody: String) {
-        textBodies.append(textBody)
-    }
-    
-    public func addTextBodies(textBodies: [String]) {
-        self.textBodies.append(contentsOf: textBodies)
-    }
-    
-    public func reset() {
-        textBodies.removeAll()
+    func extractSource(fromTextBody textBody: String, usingRange range: NSRange) -> String {
+        return (textBody as NSString).substring(with: range)
     }
 
 }
