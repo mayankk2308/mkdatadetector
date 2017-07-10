@@ -29,27 +29,30 @@ You can declare an instance as follows:
 let dataDetectorService: MKDataDetectorService = MKDataDetectorService()
 ```
 
-Or provide a text body (`String`) for analysis:
+### Performing Analysis
+
+For convenience, a generic `AnalysisResult<T>` structure is consistently returned for extraction/analysis results.
+
+For instance, to extract dates from some text (`String`):
 ```swift
-let dataDetectorService: MKDataDetectorService = MKDataDetectorService(textBody: <someText>)
+if let results = dataDetectorService.extractDates(withTextBody: <someText>) {
+    for result in results {
+        // do some stuff
+    }
+}
 ```
 
-Or provide multiple text bodies (`[String]`) for analysis:
+Or, to extract dates from multiple sources of text (`[String]`):
 ```swift
-let dataDetectorService: MKDataDetectorService = MKDataDetectorService(textBodies: [<someText>, <someText>, ...])
+if let results = dataDetectorService.extractDates(withTextBodies: [<someText>, <someText>, ...]) {
+    for textBodyResults in results {
+        if let tBResults = textBodyResults {
+            for result in tBResults {
+                // do some stuff
+            }
+        }
+    }
+}
 ```
-
-For more dynamic implementations, you can add text bodies later:
-```swift
-dataDetectorService.addTextBody(textBody: <someText>)
-dataDetectorService.addTextBodies(textBodies: [<someText>, <someText>, ...])
-```
-
-To restore the state of the service for reuse:
-```swift
-dataDetectorService.reset()
-```
-
-This removes all previously added or used text bodies.
 
 Further usage being decided upon.
