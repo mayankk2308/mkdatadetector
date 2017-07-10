@@ -10,3 +10,6 @@ public struct AnalysisResult<T> {
     public var source: String?
     public var data: T?
 }
+
+public typealias DateAnalysisResult = AnalysisResult<Date>
+public typealias LinkAnalysisResult = AnalysisResult<URL>
