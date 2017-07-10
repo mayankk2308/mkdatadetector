@@ -7,6 +7,8 @@ A simple convenience wrapper for data detection from natural language text.
 
 Currently in the _**development phase**_.
 
+**Core** collaborators: [Jeet Parte](https://github.com/jeetparte) & [Pinak Jalan](https://github.com/pinakj).
+
 ## Purpose
 
 While **Apple's** `NSDataDetector` is useful for extracting useful information from natural language text, it can be cumbersome to use and a little difficult to adopt. To circumvent this issue, we are developing an encapsulating framework called `MKDataDetector` to streamline the original API and simplify its usage and application.
@@ -58,7 +60,7 @@ if let results = dataDetectorService.extractDates(withTextBody: <someText>) {
     }
 }
 ```
-For a given `textBody`, the `dataDetectorService`returns an array of `DateAnalysisResult` objects.
+For a given `textBody`, the `dataDetectorService` returns an array of `DateAnalysisResult` objects.
 
 To extract dates from multiple sources of text (`[String]`):
 ```swift
