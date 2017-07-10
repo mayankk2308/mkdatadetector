@@ -1,4 +1,6 @@
 **Copyright © 2017 Mayank Kumar**
+**Copyright © 2017 Jeet Parte**
+**Copyright © 2017 Pinak Jalan**
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
