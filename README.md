@@ -1,5 +1,7 @@
 # **MKDataDetector for Swift**
 ![Status badge](https://img.shields.io/badge/status-in%20progress-ff5a5a.svg)
+![Platform badge](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS-brightgreen.svg)
+[![apm](https://img.shields.io/apm/l/vim-mode.svg)]()
 
 A simple convenience wrapper for data detection from natural language text.
 
