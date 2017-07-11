@@ -55,7 +55,7 @@ To extract dates from some text (`String`):
 if let results = dataDetectorService.extractDates(withTextBody: <someText>) {
     for result in results where result != nil {
         print(result!.source)
-        print(result!.date)
+        print(result!.data)
         // do some stuff
     }
 }
@@ -68,7 +68,7 @@ if let combinedResults = dataDetectorService.extractDates(withTextBodies: [<some
     for individualResults in combinedResults where individualResults != nil {
         for result in individualResults! where result != nil {
             print(result!.source)
-            print(result!.date)
+            print(result!.data)
             // do some stuff
         }
     }
