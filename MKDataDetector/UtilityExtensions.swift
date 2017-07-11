@@ -21,8 +21,8 @@ extension MKDataDetectorService {
                 return try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
             case .phoneNumber:
                 return try NSDataDetector(types: NSTextCheckingResult.CheckingType.phoneNumber.rawValue)
-            default:
-                return nil
+            case .transitInformation:
+                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.transitInformation.rawValue)
             }
         }
         catch {
@@ -41,8 +41,8 @@ extension MKDataDetectorService {
             return match.url as? T
         case .phoneNumber:
             return match.phoneNumber as? T
-        default:
-            return nil
+        case .transitInformation:
+            return match.components as? T
         }
     }
     

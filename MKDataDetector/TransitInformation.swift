@@ -10,8 +10,12 @@ import Foundation
 
 extension MKDataDetectorService {
     
-    public func extractTransitInformation() {
-        // TODO
+    public func extractTransitInformation(fromTextBody textBody: String) -> [TransitAnalysisResult?]? {
+        return extractData(fromTextBody: textBody, withResultType: .transitInformation)
+    }
+    
+    public func extractTransitInformation(fromTextBodies textBodies: [String]) -> [[TransitAnalysisResult?]?]? {
+        return extractData(fromTextBodies: textBodies, withResultType: .transitInformation)
     }
     
 }
