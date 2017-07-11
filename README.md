@@ -5,7 +5,7 @@
 
 A simple convenience wrapper for data detection from natural language text that simplifies data extraction and handling.
 
-Currently in the _**development phase**_.
+Currently in the _**initial testing phase**_.
 
 **Core Developers**: [Mayank Kumar](https://github.com/mayankk2308), [Jeet Parte](https://github.com/jeetparte) & [Pinak Jalan](https://github.com/pinakj).
 
@@ -15,7 +15,7 @@ While **Apple's** `NSDataDetector` is useful for extracting useful information f
 
 ## Usage
 
-After installing the framework into your project, you can easily access `MKDataDetectorService` class by importing the framework in your swift files:
+After installing the framework into your project, you can easily access the `MKDataDetectorService` class by importing the framework in your swift files:
 ```swift
 import MKDataDetector
 ```
