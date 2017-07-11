@@ -26,7 +26,7 @@ let address = "amherst, MA 01003, USA"
 //    }
 //}
 
-if let results = dataDetectorService.extractAddresses(withTextBody: address) {
+if let results = dataDetectorService.extractAddresses(fromTextBody: address) {
     for result in results {
         print(result!.source!)
         print(result!.data!)

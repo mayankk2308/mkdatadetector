@@ -10,12 +10,12 @@ import Foundation
 
 extension MKDataDetectorService {
     
-    public func extractPhoneNumbers(withTextBody textBody: String) -> [PhoneNumberAnalysisResult?]? {
-        return extractData(withTextBody: textBody, withResultType: .phoneNumber)
+    public func extractPhoneNumbers(fromTextBody textBody: String) -> [PhoneNumberAnalysisResult?]? {
+        return extractData(fromTextBody: textBody, withResultType: .phoneNumber)
     }
     
-    public func extractPhoneNumbers(withTextBodies textBodies: [String]) -> [[PhoneNumberAnalysisResult?]?]? {
-        return extractData(withTextBodies: textBodies, withResultType: .phoneNumber)
+    public func extractPhoneNumbers(fromTextBodies textBodies: [String]) -> [[PhoneNumberAnalysisResult?]?]? {
+        return extractData(fromTextBodies: textBodies, withResultType: .phoneNumber)
     }
     
 }

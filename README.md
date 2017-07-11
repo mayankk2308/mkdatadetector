@@ -7,7 +7,7 @@ A simple convenience wrapper for data detection from natural language text that 
 
 Currently in the _**development phase**_.
 
-**Core** collaborators: [Jeet Parte](https://github.com/jeetparte) & [Pinak Jalan](https://github.com/pinakj).
+**Core Developers**: [Mayank Kumar](https://github.com/mayankk2308), [Jeet Parte](https://github.com/jeetparte) & [Pinak Jalan](https://github.com/pinakj).
 
 ## Purpose
 
