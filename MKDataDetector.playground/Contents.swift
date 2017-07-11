@@ -7,9 +7,13 @@ let dataDetectorService = MKDataDetectorService()
 
 let textBody = "hello world at 9pm tomorrow"
 let textBodies = ["event on monday", "movie on wednesday", "payment due next thursday", "time", "money", "yellowstone park visit next friday", "party next friday at 8pm"]
+
 let address = "5123 Kere street, get here fast MA 01003, USA"
 let addresses = ["B713, Samartha Aangan II, Oshiwara, Andheri West, Mumbai - 400053, India", "133 Belchertown Rd Amherst MA - 01003 United States"]
+
 let link = "Mayank's Github: https://github.com/mayankk2308"
+let links = [link, "another link ://ssdsd", "testlink://", "www.apple.com", "http://apple.com"]
+
 let transit = "UA 2392"
 
 print("-----Single Body Date Results-----\n")
@@ -55,4 +59,24 @@ if let combinedAddressResults = dataDetectorService.extractAddresses(fromTextBod
     }
 }
 
-// More tests required!
+print("\n-----Single Body URL Results-----\n")
+
+if let URLResults = dataDetectorService.extractLinks(fromTextBody: link) {
+    for result in URLResults {
+        print(result!.source!)
+        print(result!.data!)
+        print()
+    }
+}
+
+print("\n-----Multiple Bodies URL Results-----\n")
+
+if let combinedURLResults = dataDetectorService.extractLinks(fromTextBodies: links) {
+    for individualResults in combinedURLResults where individualResults != nil {
+        for result in individualResults! where result != nil {
+            print(result!.source!)
+            print(result!.data!)
+            print()
+        }
+    }
+}

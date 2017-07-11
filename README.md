@@ -15,7 +15,12 @@ While **Apple's** `NSDataDetector` is useful for extracting useful information f
 
 ## Usage
 
-To keep things simple, `MKDataDetector` is packaged as a set of extensions that compartmentalize its following capabilities:
+After installing the framework into your project, you can easily access `MKDataDetectorService` class by importing the framework in your swift files:
+```swift
+import MKDataDetector
+```
+
+To keep things simple, `MKDataDetectorService` is packaged as a set of extensions that compartmentalize its following capabilities:
 
 * Date - date extraction
 * Address - address extraction
