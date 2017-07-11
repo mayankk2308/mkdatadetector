@@ -22,21 +22,6 @@ public class MKDataDetectorService {
     
     internal func extractData<T>(fromTextBody textBody: String, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
         guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
-        return extractData(fromTextBody: textBody, withDetector: detector, withResultType: type)
-    }
-    
-    internal func extractData<T>(fromTextBodies textBodies: [String], withResultType type: ResultType) -> [[AnalysisResult<T>?]?]? {
-        guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
-        var result = [[AnalysisResult<T>?]?]()
-        for textBody in textBodies {
-            if let extractedData: [AnalysisResult<T>?] = extractData(fromTextBody: textBody, withDetector: detector, withResultType: type) {
-                result.append(extractedData)
-            }
-        }
-        return result.isEmpty ? nil : result
-    }
-    
-    internal func extractData<T>(fromTextBody textBody: String, withDetector detector: NSDataDetector, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
         var analysisResults = [AnalysisResult<T>]()
         let matches = detector.matches(in: textBody, range: NSRange(location: 0, length: (textBody as NSString).length))
         if matches.isEmpty {
@@ -51,5 +36,15 @@ public class MKDataDetectorService {
             }
         }
         return analysisResults.isEmpty ? nil : analysisResults
+    }
+    
+    internal func extractData<T>(fromTextBodies textBodies: [String], withResultType type: ResultType) -> [[AnalysisResult<T>?]?]? {
+        var result = [[AnalysisResult<T>?]?]()
+        for textBody in textBodies {
+            if let extractedData: [AnalysisResult<T>?] = extractData(fromTextBody: textBody, withResultType: type) {
+                result.append(extractedData)
+            }
+        }
+        return result.isEmpty ? nil : result
     }
 }
