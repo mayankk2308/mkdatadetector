@@ -6,7 +6,7 @@ import MKDataDetector
 let dataDetectorService = MKDataDetectorService()
 
 let textBody = "hello world at 9pm tomorrow"
-let textBodies = ["event on monday", "movie on wednesday", "payment due next thursday"]
+let textBodies = ["event on monday", "movie on wednesday", "payment due next thursday", "time", "money", "yellowstone park visit next friday"]
 
 if let results = dataDetectorService.extractDates(withTextBody: textBody) {
     for result in results where result != nil {
