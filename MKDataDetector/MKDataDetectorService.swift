@@ -12,23 +12,23 @@ public class MKDataDetectorService {
     
     public init() {}
     
-    internal func extractData<T>(withTextBody textBody: String) -> [AnalysisResult<T>?]? {
-        guard let detector = dataDetectorOfType(forType: T.self) else { return nil }
-        return extractData(withTextBody: textBody, withDetector: detector)
+    internal func extractData<T>(withTextBody textBody: String, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
+        guard let detector = dataDetectorOfType(forType: T.self, withResultType: type) else { return nil }
+        return extractData(withTextBody: textBody, withDetector: detector, withResultType: type)
     }
     
-    internal func extractData<T>(withTextBodies textBodies: [String]) -> [[AnalysisResult<T>?]?]? {
-        guard let detector = dataDetectorOfType(forType: T.self) else { return nil }
+    internal func extractData<T>(withTextBodies textBodies: [String], withResultType type: ResultType) -> [[AnalysisResult<T>?]?]? {
+        guard let detector = dataDetectorOfType(forType: T.self, withResultType: type) else { return nil }
         var result = [[AnalysisResult<T>?]?]()
         for textBody in textBodies {
-            if let extractedData: [AnalysisResult<T>?] = extractData(withTextBody: textBody, withDetector: detector) {
+            if let extractedData: [AnalysisResult<T>?] = extractData(withTextBody: textBody, withDetector: detector, withResultType: type) {
                 result.append(extractedData)
             }
         }
         return result.isEmpty ? nil : result
     }
     
-    internal func extractData<T>(withTextBody textBody: String, withDetector detector: NSDataDetector) -> [AnalysisResult<T>?]? {
+    internal func extractData<T>(withTextBody textBody: String, withDetector detector: NSDataDetector, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
         var analysisResults = [AnalysisResult<T>]()
         let matches = detector.matches(in: textBody, range: NSRange(location: 0, length: (textBody as NSString).length))
         if matches.isEmpty {
@@ -38,9 +38,7 @@ public class MKDataDetectorService {
             for match in matches {
                 var analysisResult = AnalysisResult<T>()
                 analysisResult.source = extractSource(fromTextBody: textBody, usingRange: match.range)
-                if T.self == Date.self {
-                    analysisResult.data = match.date as? T
-                }
+                analysisResult.data = retrieveData(fromMatch: match, withResultType: type)
                 analysisResults.append(analysisResult)
             }
         }

@@ -11,10 +11,10 @@ import Foundation
 extension MKDataDetectorService {
     
     public func extractDates(withTextBody textBody: String) -> [DateAnalysisResult?]? {
-        return extractData(withTextBody: textBody)
+        return extractData(withTextBody: textBody, withResultType: .date)
     }
     
     public func extractDates(withTextBodies textBodies: [String]) -> [[DateAnalysisResult?]?]? {
-        return extractData(withTextBodies: textBodies)
+        return extractData(withTextBodies: textBodies, withResultType: .date)
     }
 }

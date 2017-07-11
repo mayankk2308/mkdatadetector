@@ -20,6 +20,7 @@
 		A88DD8431F12406B001D067A /* Correction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8421F12406B001D067A /* Correction.swift */; };
 		A88DD8451F12407C001D067A /* TransitInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8441F12407C001D067A /* TransitInformation.swift */; };
 		A8D560201F139F3E00553632 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */; };
+		A8F07E341F14724700E1A5C5 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F07E331F14724700E1A5C5 /* ResultType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A88DD8421F12406B001D067A /* Correction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Correction.swift; sourceTree = "<group>"; };
 		A88DD8441F12407C001D067A /* TransitInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitInformation.swift; sourceTree = "<group>"; };
 		A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
+		A8F07E331F14724700E1A5C5 /* ResultType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				A874CD091F11011E0022AA85 /* MKDataDetectorService.swift */,
 				A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */,
+				A8F07E331F14724700E1A5C5 /* ResultType.swift */,
 				A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */,
 			);
 			name = "Core Services";
@@ -205,6 +208,7 @@
 				A88DD83F1F124022001D067A /* Grammar.swift in Sources */,
 				A88DD8431F12406B001D067A /* Correction.swift in Sources */,
 				A8D560201F139F3E00553632 /* UtilityExtensions.swift in Sources */,
+				A8F07E341F14724700E1A5C5 /* ResultType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
