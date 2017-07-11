@@ -17,18 +17,10 @@ extension MKDataDetectorService {
                 return try NSDataDetector(types: NSTextCheckingResult.CheckingType.date.rawValue)
             case .address:
                 return try NSDataDetector(types: NSTextCheckingResult.CheckingType.address.rawValue)
-            case .correction:
-                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.correction.rawValue)
-            case .grammar:
-                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.grammar.rawValue)
             case .link:
                 return try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
             case .phoneNumber:
                 return try NSDataDetector(types: NSTextCheckingResult.CheckingType.phoneNumber.rawValue)
-            case .replacement:
-                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.replacement.rawValue)
-            case .spelling:
-                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.spelling.rawValue)
             default:
                 return nil
             }
@@ -45,21 +37,10 @@ extension MKDataDetectorService {
             return match.date as? T
         case .address:
             return match.addressComponents as? T
-        case .correction:
-            // TODO
-            return nil
-        case .grammar:
-            // TODO
-            return nil
         case .link:
             return match.url as? T
         case .phoneNumber:
             return match.phoneNumber as? T
-        case .replacement:
-            return match.replacementString as? T
-        case .spelling:
-            // TODO
-            return nil
         default:
             return nil
         }
@@ -67,6 +48,16 @@ extension MKDataDetectorService {
     
     internal func extractSource(fromTextBody textBody: String, usingRange range: NSRange) -> String {
         return (textBody as NSString).substring(with: range)
+    }
+    
+}
+
+extension Dictionary {
+    
+    static func += <K, V>(left: inout [K:V], right: [K:V]) {
+        for (k, v) in right {
+            left[k] = v
+        } 
     }
     
 }

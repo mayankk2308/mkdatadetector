@@ -17,13 +17,10 @@ While **Apple's** `NSDataDetector` is useful for extracting useful information f
 
 To keep things simple, `MKDataDetector` is packaged as a set of extensions that compartmentalize its following capabilities:
 
-* Spelling - spell-checking
-* Grammar - grammar checking
 * Date - date extraction
 * Address - address extraction
 * Link - link extraction
-* Replacement - symbol replacement, such as **(c) to ©**
-* Correction - spell-correction suggestions
+* Phone Number - phone number detection
 * Transit Information - flight information extraction, etc.
 
 In addition to extracting these features, the framework also provides convenience functions to manipulate and organize this data.
@@ -46,7 +43,9 @@ For convenience, a generic `AnalysisResult<T>` structure is consistently returne
 Additionally, for convenience, the generic struct has a `typealias` per result type:
 * `DateAnalysisResult` - for `AnalysisResult<Date>`
 * `URLAnalysisResult` - for `AnalysisResult<URL>`
-and so on.
+* `AddressAnalysisResult` - for `AnalysisResult<[String : String]>`
+* `PhoneNumberAnalysisResult` - for `AnalysisResult<String>`
+* `TransitAnalysisResult` - for `AnalysisResult<[String : String]>`
 
 ### Implementation
 

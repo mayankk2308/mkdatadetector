@@ -11,13 +11,9 @@
 		A874CD001F10F3260022AA85 /* MKDataDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = A874CCFE1F10F3260022AA85 /* MKDataDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A874CD0A1F11011E0022AA85 /* MKDataDetectorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874CD091F11011E0022AA85 /* MKDataDetectorService.swift */; };
 		A88DD8331F123B8A001D067A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8321F123B8A001D067A /* Date.swift */; };
-		A88DD8351F123B98001D067A /* Replacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8341F123B98001D067A /* Replacement.swift */; };
 		A88DD8371F123BA7001D067A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8361F123BA7001D067A /* Address.swift */; };
 		A88DD83B1F123E83001D067A /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD83A1F123E83001D067A /* PhoneNumber.swift */; };
-		A88DD83D1F12401A001D067A /* Spelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD83C1F12401A001D067A /* Spelling.swift */; };
-		A88DD83F1F124022001D067A /* Grammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD83E1F124022001D067A /* Grammar.swift */; };
 		A88DD8411F12403C001D067A /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8401F12403C001D067A /* Link.swift */; };
-		A88DD8431F12406B001D067A /* Correction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8421F12406B001D067A /* Correction.swift */; };
 		A88DD8451F12407C001D067A /* TransitInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8441F12407C001D067A /* TransitInformation.swift */; };
 		A8D560201F139F3E00553632 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */; };
 		A8F07E341F14724700E1A5C5 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F07E331F14724700E1A5C5 /* ResultType.swift */; };
@@ -30,13 +26,9 @@
 		A874CCFF1F10F3260022AA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A874CD091F11011E0022AA85 /* MKDataDetectorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKDataDetectorService.swift; sourceTree = "<group>"; };
 		A88DD8321F123B8A001D067A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		A88DD8341F123B98001D067A /* Replacement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Replacement.swift; sourceTree = "<group>"; };
 		A88DD8361F123BA7001D067A /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A88DD83A1F123E83001D067A /* PhoneNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
-		A88DD83C1F12401A001D067A /* Spelling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spelling.swift; sourceTree = "<group>"; };
-		A88DD83E1F124022001D067A /* Grammar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grammar.swift; sourceTree = "<group>"; };
 		A88DD8401F12403C001D067A /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
-		A88DD8421F12406B001D067A /* Correction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Correction.swift; sourceTree = "<group>"; };
 		A88DD8441F12407C001D067A /* TransitInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitInformation.swift; sourceTree = "<group>"; };
 		A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
 		A8F07E331F14724700E1A5C5 /* ResultType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
@@ -102,13 +94,9 @@
 		A88DD8391F123BC7001D067A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A88DD83C1F12401A001D067A /* Spelling.swift */,
-				A88DD83E1F124022001D067A /* Grammar.swift */,
 				A88DD8321F123B8A001D067A /* Date.swift */,
 				A88DD8361F123BA7001D067A /* Address.swift */,
 				A88DD8401F12403C001D067A /* Link.swift */,
-				A88DD8341F123B98001D067A /* Replacement.swift */,
-				A88DD8421F12406B001D067A /* Correction.swift */,
 				A88DD83A1F123E83001D067A /* PhoneNumber.swift */,
 				A88DD8441F12407C001D067A /* TransitInformation.swift */,
 			);
@@ -196,17 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A88DD8351F123B98001D067A /* Replacement.swift in Sources */,
 				A88DD8331F123B8A001D067A /* Date.swift in Sources */,
 				A874CD0A1F11011E0022AA85 /* MKDataDetectorService.swift in Sources */,
 				A88DD83B1F123E83001D067A /* PhoneNumber.swift in Sources */,
 				A88DD8371F123BA7001D067A /* Address.swift in Sources */,
 				A88DD8451F12407C001D067A /* TransitInformation.swift in Sources */,
 				A88DD8411F12403C001D067A /* Link.swift in Sources */,
-				A88DD83D1F12401A001D067A /* Spelling.swift in Sources */,
 				A85D37F11F13677600F5DDF1 /* AnalysisResult.swift in Sources */,
-				A88DD83F1F124022001D067A /* Grammar.swift in Sources */,
-				A88DD8431F12406B001D067A /* Correction.swift in Sources */,
 				A8D560201F139F3E00553632 /* UtilityExtensions.swift in Sources */,
 				A8F07E341F14724700E1A5C5 /* ResultType.swift in Sources */,
 			);

@@ -7,13 +7,9 @@
 //
 
 enum ResultType {
-    case spelling
-    case grammar
     case date
     case address
     case link
-    case replacement
-    case correction
     case phoneNumber
     case transitInformation
 }
