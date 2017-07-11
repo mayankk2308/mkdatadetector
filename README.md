@@ -76,4 +76,22 @@ if let combinedResults = dataDetectorService.extractDates(withTextBodies: [<some
 ```
 For given `textBodies`, the `dataDetectorService` returns an array of `[DateAnalysisResult]` objects.
 
-Similar pneumonic functions exist for other extractable data features.
+The extraction process is uniform for other types of data features such as phone numbers, addresses, links, and more.
+
+### Examples
+
+Consider the following inputs:
+```swift
+let meeting: String = "Meeting at 9pm tomorrow"
+let party: String = "Party next Friday at 8pm"
+```
+
+Using `dataDetectorService`'s `extractDates(withTextBody: String)` function, we receive the following output for `meeting`:
+* `source` = "at 9pm tomorrow"
+* `data` = equivalent `Date` object, specifying source date relative to the current date/time on the device
+
+The output is similar for `party`:
+* `source` = "next Friday at 8pm"
+* `data` = equivalent `Date` object, specifying source date relative to the current date/time on the device
+
+The output format will be uniform for other types of data features as well, with the `data` field returning objects of the appropriate type in each case.
