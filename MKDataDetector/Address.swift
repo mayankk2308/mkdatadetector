@@ -10,8 +10,12 @@ import Foundation
 
 extension MKDataDetectorService {
     
-    public func extractAddresses() {
-        // TODO
+    public func extractAddresses(withTextBody textBody: String) -> [AddressAnalysisResult?]? {
+        return extractData(withTextBody: textBody, withResultType: .address)
+    }
+    
+    public func extractAddresses(withTextBodies textBodies: [String]) -> [[AddressAnalysisResult?]?]? {
+        return extractData(withTextBodies: textBodies, withResultType: .address)
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 
 extension MKDataDetectorService {
     
-    internal func dataDetectorOfType<T>(forType type: T.Type, withResultType resultType: ResultType) -> NSDataDetector? {
+    internal func dataDetectorOfType(withResultType resultType: ResultType) -> NSDataDetector? {
         do {
             switch resultType {
             case .date:

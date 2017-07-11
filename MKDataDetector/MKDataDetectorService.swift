@@ -13,12 +13,12 @@ public class MKDataDetectorService {
     public init() {}
     
     internal func extractData<T>(withTextBody textBody: String, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
-        guard let detector = dataDetectorOfType(forType: T.self, withResultType: type) else { return nil }
+        guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
         return extractData(withTextBody: textBody, withDetector: detector, withResultType: type)
     }
     
     internal func extractData<T>(withTextBodies textBodies: [String], withResultType type: ResultType) -> [[AnalysisResult<T>?]?]? {
-        guard let detector = dataDetectorOfType(forType: T.self, withResultType: type) else { return nil }
+        guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
         var result = [[AnalysisResult<T>?]?]()
         for textBody in textBodies {
             if let extractedData: [AnalysisResult<T>?] = extractData(withTextBody: textBody, withDetector: detector, withResultType: type) {
