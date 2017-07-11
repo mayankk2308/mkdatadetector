@@ -16,6 +16,7 @@
 		A88DD8411F12403C001D067A /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8401F12403C001D067A /* Link.swift */; };
 		A88DD8451F12407C001D067A /* TransitInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8441F12407C001D067A /* TransitInformation.swift */; };
 		A8D560201F139F3E00553632 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */; };
+		A8EC757C1F14D67400D15369 /* CoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC757B1F14D67400D15369 /* CoreKeys.swift */; };
 		A8F07E341F14724700E1A5C5 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F07E331F14724700E1A5C5 /* ResultType.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		A88DD8401F12403C001D067A /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		A88DD8441F12407C001D067A /* TransitInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitInformation.swift; sourceTree = "<group>"; };
 		A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
+		A8EC757B1F14D67400D15369 /* CoreKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreKeys.swift; sourceTree = "<group>"; };
 		A8F07E331F14724700E1A5C5 /* ResultType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 			children = (
 				A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */,
 				A8F07E331F14724700E1A5C5 /* ResultType.swift */,
+				A8EC757B1F14D67400D15369 /* CoreKeys.swift */,
 			);
 			name = "Data Management";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				A88DD8411F12403C001D067A /* Link.swift in Sources */,
 				A85D37F11F13677600F5DDF1 /* AnalysisResult.swift in Sources */,
 				A8D560201F139F3E00553632 /* UtilityExtensions.swift in Sources */,
+				A8EC757C1F14D67400D15369 /* CoreKeys.swift in Sources */,
 				A8F07E341F14724700E1A5C5 /* ResultType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
