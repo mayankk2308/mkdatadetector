@@ -65,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				A88DD8381F123BB3001D067A /* Core Services */,
+				A8EC75791F14D56900D15369 /* Data Management */,
 				A88DD8391F123BC7001D067A /* Extensions */,
 				A874CD061F10F3370022AA85 /* Configuration */,
 			);
@@ -85,8 +86,6 @@
 			children = (
 				A874CD091F11011E0022AA85 /* MKDataDetectorService.swift */,
 				A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */,
-				A8F07E331F14724700E1A5C5 /* ResultType.swift */,
-				A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */,
 			);
 			name = "Core Services";
 			sourceTree = "<group>";
@@ -101,6 +100,15 @@
 				A88DD8441F12407C001D067A /* TransitInformation.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A8EC75791F14D56900D15369 /* Data Management */ = {
+			isa = PBXGroup;
+			children = (
+				A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */,
+				A8F07E331F14724700E1A5C5 /* ResultType.swift */,
+			);
+			name = "Data Management";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

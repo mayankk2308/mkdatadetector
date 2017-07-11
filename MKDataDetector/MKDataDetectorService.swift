@@ -10,7 +10,17 @@ import Foundation
 
 public class MKDataDetectorService {
     
+    internal let checkingTypeMap = [
+        ResultType.date: NSTextCheckingResult.CheckingType.date.rawValue,
+        ResultType.address: NSTextCheckingResult.CheckingType.address.rawValue,
+        ResultType.link: NSTextCheckingResult.CheckingType.link.rawValue,
+        ResultType.phoneNumber: NSTextCheckingResult.CheckingType.phoneNumber.rawValue,
+        ResultType.transitInformation: NSTextCheckingResult.CheckingType.transitInformation.rawValue,
+    ]
+    
     public init() {}
+    
+    
     
     internal func extractData<T>(fromTextBody textBody: String, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
         guard let detector = dataDetectorOfType(withResultType: type) else { return nil }

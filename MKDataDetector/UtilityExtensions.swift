@@ -12,23 +12,10 @@ extension MKDataDetectorService {
     
     internal func dataDetectorOfType(withResultType resultType: ResultType) -> NSDataDetector? {
         do {
-            switch resultType {
-            case .date:
-                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.date.rawValue)
-            case .address:
-                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.address.rawValue)
-            case .link:
-                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-            case .phoneNumber:
-                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.phoneNumber.rawValue)
-            case .transitInformation:
-                return try NSDataDetector(types: NSTextCheckingResult.CheckingType.transitInformation.rawValue)
-            }
+            guard let detectorType = checkingTypeMap[resultType] else { return nil }
+            return try NSDataDetector(types: detectorType)
         }
-        catch {
-            fatalError("could not initialize detector")
-        }
-        return nil
+        catch { return nil }
     }
     
     internal func retrieveData<T>(fromMatch match: NSTextCheckingResult, withResultType type: ResultType) -> T? {
@@ -48,16 +35,6 @@ extension MKDataDetectorService {
     
     internal func extractSource(fromTextBody textBody: String, usingRange range: NSRange) -> String {
         return (textBody as NSString).substring(with: range)
-    }
-    
-}
-
-extension Dictionary {
-    
-    static func += <K, V>(left: inout [K:V], right: [K:V]) {
-        for (k, v) in right {
-            left[k] = v
-        } 
     }
     
 }

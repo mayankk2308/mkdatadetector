@@ -16,3 +16,4 @@ public typealias DateAnalysisResult = AnalysisResult<Date>
 public typealias URLAnalysisResult = AnalysisResult<URL>
 public typealias AddressAnalysisResult = AnalysisResult<[String : String]>
 public typealias TransitAnalysisResult = AnalysisResult<[String : String]>
+public typealias MixedDataAnalysisResult = AnalysisResult<[String : String]>
