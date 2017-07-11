@@ -20,8 +20,6 @@ public class MKDataDetectorService {
     
     public init() {}
     
-    
-    
     internal func extractData<T>(fromTextBody textBody: String, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
         guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
         return extractData(fromTextBody: textBody, withDetector: detector, withResultType: type)

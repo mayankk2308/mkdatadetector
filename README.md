@@ -77,6 +77,8 @@ For given `textBodies`, the `dataDetectorService` returns an array of `[DateAnal
 
 The extraction process is uniform for other types of data features such as phone numbers, addresses, links, and more.
 
+For more complex extractions - such as requests for addresses and transit details, the returned data is of type `[String : String]`. For convenience, `Address` and `Transit` structures with the associated keys are provided for easy access. For example, to access the zipcode in an extracted address, simply use the key `Address.zip`.
+
 ### Examples
 
 Consider the following inputs:
