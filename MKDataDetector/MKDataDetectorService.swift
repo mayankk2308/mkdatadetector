@@ -25,16 +25,14 @@ public class MKDataDetectorService {
         let dataDetector: NSDataDetector
         if detector != nil {
             dataDetector = detector!
-        }
-        else {
+        } else {
             guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
             dataDetector = detector
         }
         let matches = dataDetector.matches(in: textBody, range: NSRange(location: 0, length: (textBody as NSString).length))
         if matches.isEmpty {
             return nil
-        }
-        else {
+        } else {
             for match in matches {
                 var analysisResult = AnalysisResult<T>()
                 analysisResult.source = extractSource(fromTextBody: textBody, usingRange: match.range)
