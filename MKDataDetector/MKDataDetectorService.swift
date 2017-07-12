@@ -20,10 +20,16 @@ public class MKDataDetectorService {
     
     public init() {}
     
-    internal func extractData<T>(fromTextBody textBody: String, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
-        guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
+    internal func extractData<T>(fromTextBody textBody: String, withDetector detector: NSDataDetector? = nil, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
         var analysisResults = [AnalysisResult<T>]()
-        let matches = detector.matches(in: textBody, range: NSRange(location: 0, length: (textBody as NSString).length))
+        let dataDetector: NSDataDetector
+        if detector != nil {
+            dataDetector = detector!
+        } else {
+            guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
+            dataDetector = detector
+        }
+        let matches = dataDetector.matches(in: textBody, range: NSRange(location: 0, length: (textBody as NSString).length))
         if matches.isEmpty {
             return nil
         }
@@ -40,8 +46,9 @@ public class MKDataDetectorService {
     
     internal func extractData<T>(fromTextBodies textBodies: [String], withResultType type: ResultType) -> [[AnalysisResult<T>?]?]? {
         var result = [[AnalysisResult<T>?]?]()
+        guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
         for textBody in textBodies {
-            if let extractedData: [AnalysisResult<T>?] = extractData(fromTextBody: textBody, withResultType: type) {
+            if let extractedData: [AnalysisResult<T>?] = extractData(fromTextBody: textBody, withDetector: detector, withResultType: type) {
                 result.append(extractedData)
             }
         }
