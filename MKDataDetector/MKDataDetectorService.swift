@@ -25,7 +25,8 @@ public class MKDataDetectorService {
         let dataDetector: NSDataDetector
         if detector != nil {
             dataDetector = detector!
-        } else {
+        }
+        else {
             guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
             dataDetector = detector
         }
