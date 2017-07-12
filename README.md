@@ -101,3 +101,9 @@ The output is similar for `party`:
 * `data` = equivalent `Date` object, specifying source date relative to the current date/time on the device
 
 The output format will be uniform for other types of data features as well, with the `data` field returning objects of the appropriate type in each case.
+
+### Limitations
+
+According to Apple's documentation on `NSDataDetector`, the class can currently match dates, addresses, links, phone numbers and transit information, and not other present properties such as grammar and spelling. They have, therefore, been excluded from this framework as well.
+
+Additionally, `NSDataDetector`, while having the facility of extracting airline information from natural language text, does not extract the names of airlines, and only retrieves the flight number data. We are investigating this at the moment.
