@@ -14,7 +14,11 @@ let addresses = ["B713, Samartha Aangan II, Oshiwara, Andheri West, Mumbai - 400
 let link = "Mayank's Github: https://github.com/mayankk2308"
 let links = [link, "another link ://ssdsd", "testlink://", "www.apple.com", "http://apple.com"]
 
+let phone = "Mayank: +1 (413) 801 6324"
+let phones = ["+14138016324", "Mayank: +91 9920095040", "400053"]
+
 let transit = "UA 2392"
+let transits = ["Flight 2334", "EK 239 to Boston", "Emirates Airlines", "United Flight 2223"]
 
 print("-----Single Body Date Results-----\n")
 if let singleBodyDateResults = dataDetectorService.extractDates(fromTextBody: textBody) {
@@ -73,6 +77,50 @@ print("\n-----Multiple Bodies URL Results-----\n")
 
 if let combinedURLResults = dataDetectorService.extractLinks(fromTextBodies: links) {
     for individualResults in combinedURLResults where individualResults != nil {
+        for result in individualResults! where result != nil {
+            print(result!.source!)
+            print(result!.data!)
+            print()
+        }
+    }
+}
+
+print("\n-----Single Body Phone Results-----\n")
+
+if let phoneResults = dataDetectorService.extractPhoneNumbers(fromTextBody: phone) {
+    for result in phoneResults {
+        print(result!.source!)
+        print(result!.data!)
+        print()
+    }
+}
+
+print("\n-----Multiple Bodies Phone Results-----\n")
+
+if let combinedPhoneResults = dataDetectorService.extractPhoneNumbers(fromTextBodies: phones) {
+    for individualResults in combinedPhoneResults where individualResults != nil {
+        for result in individualResults! where result != nil {
+            print(result!.source!)
+            print(result!.data!)
+            print()
+        }
+    }
+}
+
+print("\n-----Single Body Transit Results-----\n")
+
+if let transitResults = dataDetectorService.extractTransitInformation(fromTextBody: transit) {
+    for result in transitResults {
+        print(result!.source!)
+        print(result!.data!)
+        print()
+    }
+}
+
+print("\n-----Multiple Bodies Transit Results-----\n")
+
+if let combinedTransitResults = dataDetectorService.extractTransitInformation(fromTextBodies: transits) {
+    for individualResults in combinedTransitResults where individualResults != nil {
         for result in individualResults! where result != nil {
             print(result!.source!)
             print(result!.data!)
