@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MKDataDetector.playground">
+      location = "group:TestGround-iOS.playground">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/Mayank/Desktop/mkdatadetector-swift/TestGround-macOS.playground">
    </FileRef>
    <FileRef
       location = "container:MKDataDetector.xcodeproj">

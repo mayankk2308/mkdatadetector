@@ -6,7 +6,7 @@
 //  Copyright © 2017 Mayank Kumar. Available under the MIT license.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for MKDataDetector.
 FOUNDATION_EXPORT double MKDataDetectorVersionNumber;
