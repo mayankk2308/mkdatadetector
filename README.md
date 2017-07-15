@@ -41,7 +41,7 @@ let dataDetectorService: MKDataDetectorService = MKDataDetectorService()
 
 For convenience, a generic `AnalysisResult<T>` structure is consistently returned for extraction/analysis results.
 
-`AnalysisResult<T>` contains two fields:
+`AnalysisResult<T>` contains **3** fields:
 * Source (`source`) - the source `String` from which data was detected
 * Source Range (`sourceRange`) - the `NSRange` of the matched string in the original string
 * Data (`data`) - the data `T` extracted from the source input
