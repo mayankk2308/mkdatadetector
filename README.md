@@ -107,3 +107,16 @@ The output format will be uniform for other types of data features as well, with
 According to Apple's documentation on `NSDataDetector`, the class can currently match dates, addresses, links, phone numbers and transit information, and not other present properties such as grammar and spelling. They have, therefore, been excluded from this framework as well.
 
 Additionally, `NSDataDetector`, while having the facility of extracting airline information from natural language text, does not extract the names of airlines, and only retrieves the flight number data. We are investigating this at the moment.
+
+## Contact
+
+You can contact:
+* Mayank Kumar - via [email](mailto:mayankk2308@gmail.com) or [LinkedIn](https://www.linkedin.com/in/mayank-kumar-478245b1/)
+* Jeet Parte
+* Pinak Jalan
+
+For any inquires or community-related issues.
+
+## License
+
+This project is available under the [MIT](https://github.com/mayankk2308/mkdatadetector-swift/blob/master/LICENSE.md) license.
