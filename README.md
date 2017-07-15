@@ -1,5 +1,5 @@
 # **MKDataDetector for Swift**
-![Status badge](https://img.shields.io/badge/status-in%20progress-ff5a5a.svg)
+[![Build Status](https://travis-ci.org/mayankk2308/mkdatadetector-swift.svg?branch=master)](https://travis-ci.org/mayankk2308/mkdatadetector-swift)
 ![Platform badge](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS-brightgreen.svg)
 [![apm](https://img.shields.io/apm/l/vim-mode.svg)]()
 
