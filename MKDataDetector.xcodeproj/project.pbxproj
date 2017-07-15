@@ -15,10 +15,22 @@
 		A88DD83B1F123E83001D067A /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD83A1F123E83001D067A /* PhoneNumber.swift */; };
 		A88DD8411F12403C001D067A /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8401F12403C001D067A /* Link.swift */; };
 		A88DD8451F12407C001D067A /* TransitInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8441F12407C001D067A /* TransitInformation.swift */; };
+		A895A6F61F1A358E006A6C35 /* MKDataDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895A6F51F1A358E006A6C35 /* MKDataDetectorTests.swift */; };
+		A895A6F81F1A358E006A6C35 /* MKDataDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A874CCFB1F10F3260022AA85 /* MKDataDetector.framework */; };
 		A8D560201F139F3E00553632 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */; };
 		A8EC757C1F14D67400D15369 /* CoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC757B1F14D67400D15369 /* CoreKeys.swift */; };
 		A8F07E341F14724700E1A5C5 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F07E331F14724700E1A5C5 /* ResultType.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A895A6F91F1A358E006A6C35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A874CCF21F10F3260022AA85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A874CCFA1F10F3260022AA85;
+			remoteInfo = MKDataDetector;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
@@ -31,6 +43,9 @@
 		A88DD83A1F123E83001D067A /* PhoneNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		A88DD8401F12403C001D067A /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		A88DD8441F12407C001D067A /* TransitInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitInformation.swift; sourceTree = "<group>"; };
+		A895A6F31F1A358E006A6C35 /* MKDataDetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKDataDetectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A895A6F51F1A358E006A6C35 /* MKDataDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKDataDetectorTests.swift; sourceTree = "<group>"; };
+		A895A6F71F1A358E006A6C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
 		A8EC757B1F14D67400D15369 /* CoreKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreKeys.swift; sourceTree = "<group>"; };
 		A8F07E331F14724700E1A5C5 /* ResultType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
@@ -44,6 +59,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A895A6F01F1A358E006A6C35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A895A6F81F1A358E006A6C35 /* MKDataDetector.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				A874CCFD1F10F3260022AA85 /* MKDataDetector */,
+				A895A6F41F1A358E006A6C35 /* MKDataDetectorTests */,
 				A874CCFC1F10F3260022AA85 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				A874CCFB1F10F3260022AA85 /* MKDataDetector.framework */,
+				A895A6F31F1A358E006A6C35 /* MKDataDetectorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +129,15 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		A895A6F41F1A358E006A6C35 /* MKDataDetectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A895A6F51F1A358E006A6C35 /* MKDataDetectorTests.swift */,
+				A895A6F71F1A358E006A6C35 /* Info.plist */,
+			);
+			path = MKDataDetectorTests;
+			sourceTree = "<group>";
+		};
 		A8EC75791F14D56900D15369 /* Data Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,12 +180,31 @@
 			productReference = A874CCFB1F10F3260022AA85 /* MKDataDetector.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A895A6F21F1A358E006A6C35 /* MKDataDetectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A895A6FD1F1A358E006A6C35 /* Build configuration list for PBXNativeTarget "MKDataDetectorTests" */;
+			buildPhases = (
+				A895A6EF1F1A358E006A6C35 /* Sources */,
+				A895A6F01F1A358E006A6C35 /* Frameworks */,
+				A895A6F11F1A358E006A6C35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A895A6FA1F1A358E006A6C35 /* PBXTargetDependency */,
+			);
+			name = MKDataDetectorTests;
+			productName = MKDataDetectorTests;
+			productReference = A895A6F31F1A358E006A6C35 /* MKDataDetectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A874CCF21F10F3260022AA85 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Mayank Kumar";
 				TargetAttributes = {
@@ -159,6 +212,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = YF7XP6ZYSQ;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					A895A6F21F1A358E006A6C35 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = YF7XP6ZYSQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -176,12 +234,20 @@
 			projectRoot = "";
 			targets = (
 				A874CCFA1F10F3260022AA85 /* MKDataDetector */,
+				A895A6F21F1A358E006A6C35 /* MKDataDetectorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A874CCF91F10F3260022AA85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A895A6F11F1A358E006A6C35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -208,7 +274,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A895A6EF1F1A358E006A6C35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A895A6F61F1A358E006A6C35 /* MKDataDetectorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A895A6FA1F1A358E006A6C35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A874CCFA1F10F3260022AA85 /* MKDataDetector */;
+			targetProxy = A895A6F91F1A358E006A6C35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A874CD011F10F3260022AA85 /* Debug */ = {
@@ -383,6 +465,38 @@
 			};
 			name = Release;
 		};
+		A895A6FB1F1A358E006A6C35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YF7XP6ZYSQ;
+				INFOPLIST_FILE = MKDataDetectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mayank.MKDataDetectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A895A6FC1F1A358E006A6C35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YF7XP6ZYSQ;
+				INFOPLIST_FILE = MKDataDetectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mayank.MKDataDetectorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -403,6 +517,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A895A6FD1F1A358E006A6C35 /* Build configuration list for PBXNativeTarget "MKDataDetectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A895A6FB1F1A358E006A6C35 /* Debug */,
+				A895A6FC1F1A358E006A6C35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
