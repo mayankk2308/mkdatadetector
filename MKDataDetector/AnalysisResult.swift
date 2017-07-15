@@ -8,6 +8,7 @@
 
 public struct AnalysisResult<T> {
     public var source: String?
+    public var sourceRange: NSRange?
     public var data: T?
 }
 
@@ -16,4 +17,3 @@ public typealias DateAnalysisResult = AnalysisResult<Date>
 public typealias URLAnalysisResult = AnalysisResult<URL>
 public typealias AddressAnalysisResult = AnalysisResult<[String : String]>
 public typealias TransitAnalysisResult = AnalysisResult<[String : String]>
-public typealias MixedDataAnalysisResult = AnalysisResult<[String : String]>

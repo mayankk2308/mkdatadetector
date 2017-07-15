@@ -36,6 +36,7 @@ public class MKDataDetectorService {
             for match in matches {
                 var analysisResult = AnalysisResult<T>()
                 analysisResult.source = extractSource(fromTextBody: textBody, usingRange: match.range)
+                analysisResult.sourceRange = match.range
                 analysisResult.data = retrieveData(fromMatch: match, withResultType: type)
                 analysisResults.append(analysisResult)
             }
