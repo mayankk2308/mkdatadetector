@@ -11,7 +11,7 @@ Currently in the _**testing phase**_.
 
 ## Purpose
 
-While **Apple's** `NSDataDetector` is useful for extracting useful information from natural language text, it can be cumbersome to use and a little difficult to adopt. To circumvent this issue, we are developing an encapsulating framework called `MKDataDetector` to streamline the original API and simplify its usage and application.
+While **Apple's** `NSDataDetector` is useful for extracting useful information from natural language text, it can sometimes be cumbersome to use and a little difficult to adopt. To circumvent this issue, we are developing an encapsulating framework called `MKDataDetector` to streamline the original API, simplify its usage, and build on it with additional supporting capabilities that use information effectively.
 
 ## Usage
 
@@ -102,24 +102,6 @@ The extraction process is uniform for other types of data features such as phone
 
 For more complex extractions - such as requests for addresses and transit details, the returned data is of type `[String : String]`. For convenience, `Address` and `Transit` structures with the associated keys are provided for easy access. For example, to access the zip-code in an extracted address, simply use the key `Address.zip`.
 
-### Examples
-
-Consider the following inputs:
-```swift
-let meeting: String = "Meeting at 9pm tomorrow"
-let party: String = "Party next Friday at 8pm"
-```
-
-Using `dataDetectorService`'s `extractDates(withTextBody: String)` function, we receive the following output for `meeting`:
-* `source` = "at 9pm tomorrow"
-* `data` = equivalent `Date` object, specifying source date relative to the current date/time on the device
-
-The output is similar for `party`:
-* `source` = "next Friday at 8pm"
-* `data` = equivalent `Date` object, specifying source date relative to the current date/time on the device
-
-The output format will be uniform for other types of data features as well, with the `data` field returning objects of the appropriate type in each case.
-
 ### Additional Capabilities
 
 Besides data detection, `MKDataDetector` also provides handy convenience functions to use detected information. For example, to retrieve precise **location information** from some string:
@@ -158,7 +140,44 @@ dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: sampleResult, 
 }
 ```
 
+### Examples
+
+Consider the following inputs:
+```swift
+let meeting: String = "Meeting at 9pm tomorrow"
+let party: String = "Party next Friday at 8pm"
+```
+
+Using `dataDetectorService`'s `extractDates(withTextBody: String)` function, we receive the following output for `meeting`:
+* `source` = *"Meeting at 9pm tomorrow"*
+* `sourceInRange` = `NSRange` of the match *"at 9pm tomorrow"*
+* `data` = equivalent `Date` object, specifying source date relative to the current date/time on the device
+
+The output is similar for `party`:
+* `source` = *"Party next Friday at 8pm"*
+* `sourceInRange` = `NSRange` of the match *"next Friday at 8pm"*
+* `data` = equivalent `Date` object, specifying source date relative to the current date/time on the device
+
+The output format will be uniform for other types of data features as well, with the `data` field returning objects of the appropriate type in each case.
+
+You can easily make use of this data, for instance, by adding the events to the user's calendar:
+```swift
+dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: meetingAnalysisResult) { success in
+    if success {
+        // event added to default calendar as a "Meeting" with alarm set for "9pm tomorrow"
+    }
+}
+
+dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: partyAnalysisResult) { success in
+    if success {
+        // event added to default calendar as a "Party" with alarm set for "8pm next Friday"
+    }
+}
+```
+
 Note that automatic event name extraction may yield unexpected event names in rare cases. For concrete support, use the former function instead.
+
+More capabilities will be added soon.
 
 ### Limitations
 
