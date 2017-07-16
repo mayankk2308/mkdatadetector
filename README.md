@@ -59,8 +59,8 @@ let dataDetectorService: MKDataDetectorService = MKDataDetectorService()
 For convenience, a generic `AnalysisResult<T>` structure is consistently returned for extraction/analysis results.
 
 `AnalysisResult<T>` contains **3** fields:
-* Source (`source`) - the source `String` from which data was detected
-* Source Range (`sourceRange`) - the `NSRange` of the matched string in the original string
+* Source (`source`) - the source/original complete `String` from which data was detected
+* Source Range (`rangeInSource`) - the `NSRange` of the matched string in the original string
 * Data (`data`) - the data `T` extracted from the source input
 
 Additionally, for convenience, the generic struct has a `typealias` per result type:
@@ -134,7 +134,25 @@ if let addresses = testString.addresses {
 }
 ```
 
-More capabilities to be added.
+For calendar integration, you can easily create events:
+```swift
+dataDetectorService.addEventToDefaultCalendar(withEventName: someText, withStartDate: someStartDate, withEndDate: someEndDate) { success in
+    if success {
+        // event added
+    }
+}
+```
+
+If you have a `DateAnalysisResult`, you can opt for easier event creation that also extracts the event name automatically:
+```swift
+dataDetectorService.ddEventToDefaultCalendar(withAnalysisResult: someResult, withEndDate: someEndDate) { success in
+    if success {
+        // event added
+    }
+}
+```
+
+Note that automatic event name extraction may yield unexpected event names in rare cases. For concrete support, use the former function instead.
 
 ### Limitations
 
@@ -149,7 +167,7 @@ You can contact:
 * Jeet Parte
 * Pinak Jalan
 
-For any inquires or community-related issues.
+for any inquires or community-related issues.
 
 ## License
 

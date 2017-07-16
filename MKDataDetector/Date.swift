@@ -20,7 +20,7 @@ extension MKDataDetectorService {
     }
     
     public func addEventToDefaultCalendar(withAnalysisResult result: DateAnalysisResult, withEndDate endDate: Date, onCompletion completion: @escaping (Bool) -> Void) {
-        let eventName = (result.source as NSString).replacingCharacters(in: result.rangeInSource, with: "").condensedWhitespace
+        let eventName = (result.source as NSString).replacingCharacters(in: result.rangeInSource, with: "").condensedWhitespace.trimmingCharacters(in: .whitespaces)
         addEventToDefaultCalendar(withEventName: eventName, withStartDate: result.data, withEndDate: endDate, onCompletion: completion)
     }
     
