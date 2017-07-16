@@ -20,15 +20,19 @@ Immediately after setting up the framework, you can easily use basic capabilitie
 let testString = <someText>
 
 // extract Dates
-print(testString.dates)
+if let dates = testString.dates {
+    print(dates)
+}
 
 // extract Links
-print(testString.links)
+if let links = testString.links {
+    print(links)
+}
 ```
 
 Similar extensions exist for addresses, transit, and phone numbers as well.
 
-After installing the framework into your project, you can easily access the `MKDataDetectorService` class by importing the framework in your swift files:
+For more informative responses, you can import and use the `MKDataDetectorService` class:
 ```swift
 import MKDataDetector
 ```
@@ -115,6 +119,22 @@ The output is similar for `party`:
 * `data` = equivalent `Date` object, specifying source date relative to the current date/time on the device
 
 The output format will be uniform for other types of data features as well, with the `data` field returning objects of the appropriate type in each case.
+
+### Additional Convenience Capabilities
+
+Besides data detection, the framework also provides handy convenience functions to use detected information. For example, to retrieve precise location information from some string:
+```swift
+if let addresses = testString.addresses {
+    guard let primaryAddress = addresses.first else { return }
+
+    // Get CLLocation object for mapping
+    dataDetectorService.extractLocation(fromAddress: primaryAddress) { location in
+        // do some stuff
+    }
+}
+```
+
+More capabilities to be added.
 
 ### Limitations
 
