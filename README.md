@@ -145,7 +145,7 @@ dataDetectorService.addEventToDefaultCalendar(withEventName: someText, withStart
 
 If you have a `DateAnalysisResult`, you can opt for easier event creation that also extracts the event name automatically:
 ```swift
-dataDetectorService.ddEventToDefaultCalendar(withAnalysisResult: someResult, withEndDate: someEndDate) { success in
+dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: someResult, withEndDate: someEndDate) { success in
     if success {
         // event added
     }
