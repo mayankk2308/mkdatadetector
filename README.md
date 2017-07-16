@@ -104,7 +104,9 @@ For more complex extractions - such as requests for addresses and transit detail
 
 ### Additional Capabilities
 
-Besides data detection, `MKDataDetector` also provides handy convenience functions to use detected information. For example, to retrieve precise **location information** from some string:
+Besides data detection, `MKDataDetector` also provides handy convenience functions to use detected information.
+
+To retrieve precise **location information** from a **valid** `String` address:
 ```swift
 dataDetectorService.extractLocation(fromAddress: sampleText) { location in
     if extractedLocation = location {
@@ -140,7 +142,9 @@ dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: sampleResult, 
 }
 ```
 
-Note that automatic event name extraction may yield unexpected event names in rare cases. For concrete support, use the former function instead. Additionally, the *withEndDate* parameter is optional, and the event created would then default to being an hour long.
+Note that automatic event name extraction may yield unexpected event names in rare cases. For concrete support, use the former function instead.
+
+Additionally, the __*withEndDate*__ parameter is optional. Not providing a value defaults the event to end after an hour.
 
 ### Examples
 
@@ -177,14 +181,11 @@ dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: partyAnalysisR
 }
 ```
 
-
-More capabilities will be added soon.
-
 ### Limitations
 
-According to Apple's documentation on `NSDataDetector`, the class can currently match dates, addresses, links, phone numbers and transit information, and not other present properties such as grammar and spelling. They have, therefore, been excluded from this framework as well.
+According to Apple's documentation on `NSDataDetector`, the class can currently match dates, addresses, links, phone numbers and transit information, and not other present properties such as grammar and spelling. They have been excluded from this framework as well.
 
-Additionally, `NSDataDetector`, while having the facility of extracting airline information from natural language text, does not extract the names of airlines, and only retrieves the flight number data. We are investigating this at the moment.
+Additionally, `NSDataDetector`, while having the facility of extracting airline information from natural language text, does not extract the names of airlines, and only retrieves the flight number data. We are looking into this.
 
 ## Contact
 
