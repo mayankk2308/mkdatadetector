@@ -14,8 +14,7 @@ extension MKDataDetectorService {
         do {
             guard let detectorType = checkingTypeMap[resultType] else { return nil }
             return try NSDataDetector(types: detectorType)
-        }
-        catch { return nil }
+        } catch { return nil }
     }
     
     internal func retrieveData<T>(fromMatch match: NSTextCheckingResult, withResultType type: ResultType) -> T? {

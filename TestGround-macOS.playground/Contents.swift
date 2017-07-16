@@ -144,4 +144,10 @@ dataDetectorService.extractLocation(fromAddress: legalAddress) { location in
 //    print(location)
 }
 
+//dataDetectorService.addEventToDefaultCalendar(withEventName: "TestEvent", withDate: textBody.dates!.first!) { success in
+//    
+//}
+
+// Calendar integration testing required on an actual iOS/macOS application
+
 //XCPSetExecutionShouldContinueIndefinitely()
