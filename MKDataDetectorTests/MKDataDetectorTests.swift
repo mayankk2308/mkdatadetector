@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CoreLocation
 @testable import MKDataDetector // Internal functions can be independently tested
 
 class MKDataDetectorTests: XCTestCase {
@@ -42,10 +43,14 @@ class MKDataDetectorTests: XCTestCase {
     }
     
     func testAddressExtraction() {
-        let textBody = "1800 Ellis St,San Francisco, CA 94102,United States"
+        let textBody = "1800 Ellis St,San Francisco, CA 94102, United States"
         let results = dataDetectorService.extractAddresses(fromTextBody: textBody)
         XCTAssert(results != nil, "Result must not be nil.")
-
-
+        if let locations = dataDetectorService.extractLocations(fromAddresses: results!) {
+            XCTAssert(locations.count > 0, "Result must be nil.")
+            for location in locations {
+                print(location)
+            }
+        }
     }
 }

@@ -1,5 +1,7 @@
 // Test below - delete tests before commits, or exclude this file in your commits
 import MKDataDetector
+import CoreLocation
+import XCPlayground
 
 let dataDetectorService = MKDataDetectorService()
 
@@ -7,6 +9,7 @@ let textBody = "hello world at 9pm tomorrow"
 let textBodies = ["event on monday", "movie on wednesday", "payment due next thursday", "time", "money", "yellowstone park visit next friday", "party next friday at 8pm"]
 
 let address = "5123 Kere street, get here fast MA 01003, USA"
+let legalAddress = "133 Belchertown Rd Amherst MA - 01003 United States"
 let addresses = ["B713, Samartha Aangan II, Oshiwara, Andheri West, Mumbai - 400053, India", "133 Belchertown Rd Amherst MA - 01003 United States"]
 
 let link = "Mayank's Github: https://github.com/mayankk2308"
@@ -134,3 +137,11 @@ print(link.links!)
 print(transit.transitInfo!)
 print(address.addresses!)
 print(phone.phoneNumbers!)
+
+print("\n-----Test Location Extraction-----\n")
+
+dataDetectorService.extractLocation(fromAddress: legalAddress) { location in
+//    print(location)
+}
+
+//XCPSetExecutionShouldContinueIndefinitely()
