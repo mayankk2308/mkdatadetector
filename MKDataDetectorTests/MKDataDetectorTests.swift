@@ -40,4 +40,12 @@ class MKDataDetectorTests: XCTestCase {
         XCTAssert(results != nil, "Result must not be nil.")
         XCTAssert(results!.count == 2, "2 results expected.")
     }
+    
+    func testAddressExtraction() {
+        let textBody = "1800 Ellis St,San Francisco, CA 94102,United States"
+        let results = dataDetectorService.extractAddresses(fromTextBody: textBody)
+        XCTAssert(results != nil, "Result must not be nil.")
+
+
+    }
 }

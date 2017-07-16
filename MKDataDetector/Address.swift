@@ -13,28 +13,43 @@ extension MKDataDetectorService {
     
     public func extractAddresses(fromTextBody textBody: String) -> [AddressAnalysisResult?]? {
         
-        let result = (extractData(fromTextBody: textBody, withResultType: .address)! as [AnalysisResult<String>?])
+   if let result :[AddressAnalysisResult] =  ((extractData(fromTextBody: textBody, withResultType: .address)))
+      {
         processLocation(result)
+      }
+        else
+        {
         
+        }
         return extractData(fromTextBody: textBody, withResultType: .address)
     }
     
     public func extractAddresses(fromTextBodies textBodies: [String]) -> [[AddressAnalysisResult?]?]? {
+        
         return extractData(fromTextBodies: textBodies, withResultType: .address)
     }
     
-    public func processLocation(_ addresses: [AnalysisResult<String>?])
+    public func processLocation(_ addresses: [AddressAnalysisResult]) -> [CLLocation]
     {
-        let geocoder = CLGeocoder()
+        var geocoder = CLGeocoder()
         var locations: [CLLocation]?
+        let test = geocoder.isGeocoding
         for address in addresses
         {
-            geocoder.geocodeAddressString((address?.source)!) { (placemarks, error) in
+            geocoder.geocodeAddressString(address.source, completionHandler: { (placemarks: [CLPlacemark]?, error: Error?) -> Void in
                 // Process Response
                 let location = self.processResponse(withPlacemarks: placemarks, error: error)
                 locations?.append(location)
-            }
+            })
             
+        }
+        if(locations != nil)
+        {
+            return locations!
+        }
+        else
+        {
+            return []
         }
     }
     
@@ -52,5 +67,5 @@ extension MKDataDetectorService {
             }
         }
         return location!
-}
+    }
 }
