@@ -7,9 +7,9 @@
 //
 
 public struct AnalysisResult<T> {
-    public var source: String?
-    public var sourceRange: NSRange?
-    public var data: T?
+    public var source: String
+    public var sourceRange: NSRange
+    public var data: T
 }
 
 public typealias PhoneNumberAnalysisResult = AnalysisResult<String>

@@ -20,9 +20,9 @@ let transits = ["Flight 2334", "EK 239 to Boston", "Emirates Airlines", "United 
 
 print("-----Single Body Date Results-----\n")
 if let singleBodyDateResults = dataDetectorService.extractDates(fromTextBody: textBody) {
-    for result in singleBodyDateResults where result != nil {
-        print(result!.source!)
-        print(result!.data!)
+    for result in singleBodyDateResults {
+        print(result.source)
+        print(result.data)
         print()
     }
 }
@@ -31,9 +31,9 @@ print("\n-----Multiple Bodies Date Results-----\n")
 
 if let combinedDateResults = dataDetectorService.extractDates(fromTextBodies: textBodies) {
     for individualResults in combinedDateResults where individualResults != nil {
-        for result in individualResults! where result != nil {
-            print(result!.source!)
-            print(result!.data!)
+        for result in individualResults! {
+            print(result.source)
+            print(result.data)
             print()
         }
     }
@@ -43,8 +43,8 @@ print("\n-----Single Body Address Results-----\n")
 
 if let addressResults = dataDetectorService.extractAddresses(fromTextBody: address) {
     for result in addressResults {
-        print(result!.source!)
-        print(result!.data!)
+        print(result.source)
+        print(result.data)
         print()
     }
 }
@@ -53,9 +53,9 @@ print("\n-----Multiple Bodies Address Results-----\n")
 
 if let combinedAddressResults = dataDetectorService.extractAddresses(fromTextBodies: addresses) {
     for individualResults in combinedAddressResults where individualResults != nil {
-        for result in individualResults! where result != nil {
-            print(result!.source!)
-            print(result!.data!)
+        for result in individualResults! {
+            print(result.source)
+            print(result.data)
             print()
         }
     }
@@ -65,8 +65,8 @@ print("\n-----Single Body URL Results-----\n")
 
 if let URLResults = dataDetectorService.extractLinks(fromTextBody: link) {
     for result in URLResults {
-        print(result!.source!)
-        print(result!.data!)
+        print(result.source)
+        print(result.data)
         print()
     }
 }
@@ -75,9 +75,9 @@ print("\n-----Multiple Bodies URL Results-----\n")
 
 if let combinedURLResults = dataDetectorService.extractLinks(fromTextBodies: links) {
     for individualResults in combinedURLResults where individualResults != nil {
-        for result in individualResults! where result != nil {
-            print(result!.source!)
-            print(result!.data!)
+        for result in individualResults! {
+            print(result.source)
+            print(result.data)
             print()
         }
     }
@@ -87,8 +87,8 @@ print("\n-----Single Body Phone Results-----\n")
 
 if let phoneResults = dataDetectorService.extractPhoneNumbers(fromTextBody: phone) {
     for result in phoneResults {
-        print(result!.source!)
-        print(result!.data!)
+        print(result.source)
+        print(result.data)
         print()
     }
 }
@@ -97,9 +97,9 @@ print("\n-----Multiple Bodies Phone Results-----\n")
 
 if let combinedPhoneResults = dataDetectorService.extractPhoneNumbers(fromTextBodies: phones) {
     for individualResults in combinedPhoneResults where individualResults != nil {
-        for result in individualResults! where result != nil {
-            print(result!.source!)
-            print(result!.data!)
+        for result in individualResults! {
+            print(result.source)
+            print(result.data)
             print()
         }
     }
@@ -109,8 +109,8 @@ print("\n-----Single Body Transit Results-----\n")
 
 if let transitResults = dataDetectorService.extractTransitInformation(fromTextBody: transit) {
     for result in transitResults {
-        print(result!.source!)
-        print(result!.data!)
+        print(result.source)
+        print(result.data)
         print()
     }
 }
@@ -119,9 +119,9 @@ print("\n-----Multiple Bodies Transit Results-----\n")
 
 if let combinedTransitResults = dataDetectorService.extractTransitInformation(fromTextBodies: transits) {
     for individualResults in combinedTransitResults where individualResults != nil {
-        for result in individualResults! where result != nil {
-            print(result!.source!)
-            print(result!.data!)
+        for result in individualResults! {
+            print(result.source)
+            print(result.data)
             print()
         }
     }

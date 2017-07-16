@@ -20,7 +20,7 @@ public class MKDataDetectorService {
     
     public init() {}
     
-    internal func extractData<T>(fromTextBody textBody: String, withDetector detector: NSDataDetector? = nil, withResultType type: ResultType) -> [AnalysisResult<T>?]? {
+    internal func extractData<T>(fromTextBody textBody: String, withDetector detector: NSDataDetector? = nil, withResultType type: ResultType) -> [AnalysisResult<T>]? {
         var analysisResults = [AnalysisResult<T>]()
         let dataDetector: NSDataDetector
         if detector != nil {
@@ -34,21 +34,21 @@ public class MKDataDetectorService {
             return nil
         } else {
             for match in matches {
-                var analysisResult = AnalysisResult<T>()
-                analysisResult.source = extractSource(fromTextBody: textBody, usingRange: match.range)
-                analysisResult.sourceRange = match.range
-                analysisResult.data = retrieveData(fromMatch: match, withResultType: type)
+                let range = match.range
+                let source = extractSource(fromTextBody: textBody, usingRange: range)
+                guard let data: T = retrieveData(fromMatch: match, withResultType: type) else { continue }
+                let analysisResult = AnalysisResult<T>(source: source, sourceRange: range, data: data)
                 analysisResults.append(analysisResult)
             }
         }
         return analysisResults.isEmpty ? nil : analysisResults
     }
     
-    internal func extractData<T>(fromTextBodies textBodies: [String], withResultType type: ResultType) -> [[AnalysisResult<T>?]?]? {
-        var result = [[AnalysisResult<T>?]?]()
+    internal func extractData<T>(fromTextBodies textBodies: [String], withResultType type: ResultType) -> [[AnalysisResult<T>]?]? {
+        var result = [[AnalysisResult<T>]?]()
         guard let detector = dataDetectorOfType(withResultType: type) else { return nil }
         for textBody in textBodies {
-            if let extractedData: [AnalysisResult<T>?] = extractData(fromTextBody: textBody, withDetector: detector, withResultType: type) {
+            if let extractedData: [AnalysisResult<T>] = extractData(fromTextBody: textBody, withDetector: detector, withResultType: type) {
                 result.append(extractedData)
             }
         }

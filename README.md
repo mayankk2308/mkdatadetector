@@ -58,9 +58,9 @@ Additionally, for convenience, the generic struct has a `typealias` per result t
 To extract dates from some text (`String`):
 ```swift
 if let results = dataDetectorService.extractDates(withTextBody: <someText>) {
-    for result in results where result != nil {
-        print(result!.source)
-        print(result!.data)
+    for result in results {
+        print(result.source)
+        print(result.data)
         // do some stuff
     }
 }
@@ -71,9 +71,9 @@ To extract dates from multiple sources of text (`[String]`):
 ```swift
 if let combinedResults = dataDetectorService.extractDates(withTextBodies: [<someText>, <someText>, ...]) {
     for individualResults in combinedResults where individualResults != nil {
-        for result in individualResults! where result != nil {
-            print(result!.source)
-            print(result!.data)
+        for result in individualResults! {
+            print(result.source)
+            print(result.data)
             // do some stuff
         }
     }
