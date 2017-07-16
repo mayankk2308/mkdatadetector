@@ -5,7 +5,7 @@
 
 A simple convenience wrapper for data detection from natural language text that simplifies data extraction and handling.
 
-Currently in the _**initial testing phase**_.
+Currently in the _**testing phase**_.
 
 **Core Developers**: [Mayank Kumar](https://github.com/mayankk2308), [Jeet Parte](https://github.com/jeetparte) & [Pinak Jalan](https://github.com/pinakj).
 
@@ -17,7 +17,7 @@ While **Apple's** `NSDataDetector` is useful for extracting useful information f
 
 On building the framework, you can immediately use basic functionality as an extension of `String`:
 ```swift
-let testString: String = <someText>
+let testString: String = "sampleText"
 
 // extract Dates
 if let dates: [Date] = testString.dates {
@@ -74,7 +74,7 @@ Additionally, for convenience, the generic struct has a `typealias` per result t
 
 To extract dates from some text (`String`):
 ```swift
-if let results = dataDetectorService.extractDates(withTextBody: <someText>) {
+if let results = dataDetectorService.extractDates(withTextBody: sampleTextBody) {
     for result in results {
         print(result.source)
         print(result.data)
@@ -86,7 +86,7 @@ For a given `textBody`, the `dataDetectorService` returns an array of `DateAnaly
 
 To extract dates from multiple sources of text (`[String]`):
 ```swift
-if let combinedResults = dataDetectorService.extractDates(withTextBodies: [<someText>, <someText>, ...]) {
+if let combinedResults = dataDetectorService.extractDates(withTextBodies: [sampleText, sampleText, ...]) {
     for individualResults in combinedResults where individualResults != nil {
         for result in individualResults! {
             print(result.source)
@@ -100,7 +100,7 @@ For given `textBodies`, the `dataDetectorService` returns an array of `[DateAnal
 
 The extraction process is uniform for other types of data features such as phone numbers, addresses, links, and more.
 
-For more complex extractions - such as requests for addresses and transit details, the returned data is of type `[String : String]`. For convenience, `Address` and `Transit` structures with the associated keys are provided for easy access. For example, to access the zipcode in an extracted address, simply use the key `Address.zip`.
+For more complex extractions - such as requests for addresses and transit details, the returned data is of type `[String : String]`. For convenience, `Address` and `Transit` structures with the associated keys are provided for easy access. For example, to access the zip-code in an extracted address, simply use the key `Address.zip`.
 
 ### Examples
 
@@ -122,21 +122,27 @@ The output format will be uniform for other types of data features as well, with
 
 ### Additional Capabilities
 
-Besides data detection, `MKDataDetector` also provides handy convenience functions to use detected information. For example, to retrieve precise location information from some string:
+Besides data detection, `MKDataDetector` also provides handy convenience functions to use detected information. For example, to retrieve precise **location information** from some string:
 ```swift
-if let addresses = testString.addresses {
-    guard let primaryAddress = addresses.first else { return }
-
-    // Get CLLocation object for mapping
-    dataDetectorService.extractLocation(fromAddress: primaryAddress) { location in
-        // do some stuff
+dataDetectorService.extractLocation(fromAddress: sampleText) { location in
+    if extractedLocation = location {
+        // CLLocation object available
     }
 }
 ```
 
-For calendar integration, you can easily create events:
+Alternatively, if you already have an `AddressAnalysisResult`:
 ```swift
-dataDetectorService.addEventToDefaultCalendar(withEventName: someText, withStartDate: someStartDate, withEndDate: someEndDate) { success in
+dataDetectorService.extractLocation(fromAnalysisResult: sampleAnalysisResult) { location in
+    if extractedLocation = location {
+        // CLLocation object available
+    }
+}
+```
+
+For **calendar integration**, you can easily create events:
+```swift
+dataDetectorService.addEventToDefaultCalendar(withEventName: sampleText, withStartDate: sampleStartDate, withEndDate: sampleEndDate) { success in
     if success {
         // event added
     }
@@ -145,7 +151,7 @@ dataDetectorService.addEventToDefaultCalendar(withEventName: someText, withStart
 
 If you have a `DateAnalysisResult`, you can opt for easier event creation that also extracts the event name automatically:
 ```swift
-dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: someResult, withEndDate: someEndDate) { success in
+dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: sampleResult, withEndDate: sampleEndDate) { success in
     if success {
         // event added
     }
@@ -164,8 +170,8 @@ Additionally, `NSDataDetector`, while having the facility of extracting airline 
 
 You can contact:
 * Mayank Kumar - via [email](mailto:mayankk2308@gmail.com) or [LinkedIn](https://www.linkedin.com/in/mayank-kumar-478245b1/)
-* Jeet Parte
-* Pinak Jalan
+* Jeet Parte - via [email](mailto:jeetparte@gmail.com)
+* Pinak Jalan - via [email](mailto:pinak.jalan@me.com)
 
 for any inquires or community-related issues.
 

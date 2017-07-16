@@ -19,6 +19,10 @@ extension MKDataDetectorService {
         return extractData(fromTextBodies: textBodies, withResultType: .address)
     }
     
+    public func extractLocation(fromAnalysisResult result: AddressAnalysisResult, onCompletion completion: @escaping (CLLocation?) -> Void) {
+        extractLocation(fromAddress: result.source, onCompletion: completion)
+    }
+    
     public func extractLocation(fromAddress address: String, onCompletion completion: @escaping (CLLocation?) -> Void) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { placemarks, error in
