@@ -120,9 +120,9 @@ The output is similar for `party`:
 
 The output format will be uniform for other types of data features as well, with the `data` field returning objects of the appropriate type in each case.
 
-### Additional Convenience Capabilities
+### Additional Capabilities
 
-Besides data detection, the framework also provides handy convenience functions to use detected information. For example, to retrieve precise location information from some string:
+Besides data detection, `MKDataDetector` also provides handy convenience functions to use detected information. For example, to retrieve precise location information from some string:
 ```swift
 if let addresses = testString.addresses {
     guard let primaryAddress = addresses.first else { return }

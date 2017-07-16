@@ -36,9 +36,9 @@ public class MKDataDetectorService {
         } else {
             for match in matches {
                 let range = match.range
-                let source = extractSource(fromTextBody: textBody, usingRange: range)
+                let source = textBody
                 guard let data: T = retrieveData(fromMatch: match, withResultType: type) else { continue }
-                let analysisResult = AnalysisResult<T>(source: source, sourceRange: range, data: data)
+                let analysisResult = AnalysisResult<T>(source: source, rangeInSource: range, data: data)
                 analysisResults.append(analysisResult)
             }
         }

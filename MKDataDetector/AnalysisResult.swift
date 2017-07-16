@@ -8,7 +8,7 @@
 
 public struct AnalysisResult<T> {
     public var source: String
-    public var sourceRange: NSRange
+    public var rangeInSource: NSRange
     public var data: T
 }
 
