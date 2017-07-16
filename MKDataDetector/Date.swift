@@ -25,20 +25,18 @@ extension MKDataDetectorService {
         case .authorized:
             insertEvent(withEventStore: eventStore, withEventName: name, withStartDate: startDate, withEndDate: endDate, onCompletion: completion)
             break
-        case .notDetermined:
+        default:
             eventStore.requestAccess(to: .event) { access, error in
                 if access {
                     self.insertEvent(withEventStore: eventStore, withEventName: name, withStartDate: startDate, withEndDate: endDate, onCompletion: completion)
                 }
                 else {
                     if let errorMessage = error {
-                        print("Calendar access not granted with error: \(errorMessage)")
+                        print("Calendar access error: \(errorMessage)")
                     }
                     completion(false)
                 }
             }
-            break
-        default:
             completion(false)
         }
     }
