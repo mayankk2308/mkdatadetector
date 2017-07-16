@@ -15,17 +15,17 @@ While **Apple's** `NSDataDetector` is useful for extracting useful information f
 
 ## Usage
 
-Immediately after setting up the framework, you can easily use basic capabilities as an extension of `String`:
+On building the framework, you can immediately use basic functionality as an extension of `String`:
 ```swift
-let testString = <someText>
+let testString: String = <someText>
 
 // extract Dates
-if let dates = testString.dates {
+if let dates: [Date] = testString.dates {
     print(dates)
 }
 
 // extract Links
-if let links = testString.links {
+if let links: [URL] = testString.links {
     print(links)
 }
 ```
