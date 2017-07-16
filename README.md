@@ -15,6 +15,19 @@ While **Apple's** `NSDataDetector` is useful for extracting useful information f
 
 ## Usage
 
+Immediately after setting up the framework, you can easily use basic capabilities as an extension of `String`:
+```swift
+let testString = <someText>
+
+// extract Dates
+print(testString.dates)
+
+// extract Links
+print(testString.links)
+```
+
+Similar extensions exist for addresses, transit, and phone numbers as well.
+
 After installing the framework into your project, you can easily access the `MKDataDetectorService` class by importing the framework in your swift files:
 ```swift
 import MKDataDetector

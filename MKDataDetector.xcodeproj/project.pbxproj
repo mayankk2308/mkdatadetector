@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8574ABE1F1B4EB900493423 /* StringAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8574ABD1F1B4EB900493423 /* StringAccess.swift */; };
 		A85D37F11F13677600F5DDF1 /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */; };
 		A874CD001F10F3260022AA85 /* MKDataDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = A874CCFE1F10F3260022AA85 /* MKDataDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A874CD0A1F11011E0022AA85 /* MKDataDetectorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874CD091F11011E0022AA85 /* MKDataDetectorService.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8574ABD1F1B4EB900493423 /* StringAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAccess.swift; sourceTree = "<group>"; };
 		A85D37F01F13677600F5DDF1 /* AnalysisResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
 		A874CCFB1F10F3260022AA85 /* MKDataDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKDataDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A874CCFE1F10F3260022AA85 /* MKDataDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKDataDetector.h; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				A88DD8401F12403C001D067A /* Link.swift */,
 				A88DD83A1F123E83001D067A /* PhoneNumber.swift */,
 				A88DD8441F12407C001D067A /* TransitInformation.swift */,
+				A8574ABD1F1B4EB900493423 /* StringAccess.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A88DD8331F123B8A001D067A /* Date.swift in Sources */,
+				A8574ABE1F1B4EB900493423 /* StringAccess.swift in Sources */,
 				A874CD0A1F11011E0022AA85 /* MKDataDetectorService.swift in Sources */,
 				A88DD83B1F123E83001D067A /* PhoneNumber.swift in Sources */,
 				A88DD8371F123BA7001D067A /* Address.swift in Sources */,
@@ -525,6 +529,7 @@
 				A895A6FC1F1A358E006A6C35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -126,3 +126,11 @@ if let combinedTransitResults = dataDetectorService.extractTransitInformation(fr
         }
     }
 }
+
+print("\n-----Basic Scenario Implementation Results-----\n")
+
+print(textBody.dates!)
+print(link.links!)
+print(transit.transitInfo!)
+print(address.addresses!)
+print(phone.phoneNumbers!)
