@@ -19,16 +19,16 @@ extension MKDataDetectorService {
         return extractData(fromTextBodies: textBodies, withResultType: .date)
     }
     
-    public func addEventToDefaultCalendar(withEventName name: String, withDate date: Date, onCompletion completion: @escaping (Bool) -> Void) {
+    public func addEventToDefaultCalendar(withEventName name: String, withStartDate startDate: Date, withEndDate endDate: Date, onCompletion completion: @escaping (Bool) -> Void) {
         let eventStore = EKEventStore()
         switch EKEventStore.authorizationStatus(for: .event) {
         case .authorized:
-            insertEvent(withEventStore: eventStore, withEventName: name, withDate: date, onCompletion: completion)
+            insertEvent(withEventStore: eventStore, withEventName: name, withStartDate: startDate, withEndDate: endDate, onCompletion: completion)
             break
         case .notDetermined:
             eventStore.requestAccess(to: .event) { access, error in
                 if access {
-                    self.insertEvent(withEventStore: eventStore, withEventName: name, withDate: date, onCompletion: completion)
+                    self.insertEvent(withEventStore: eventStore, withEventName: name, withStartDate: startDate, withEndDate: endDate, onCompletion: completion)
                 }
                 else {
                     if let errorMessage = error {
@@ -43,15 +43,18 @@ extension MKDataDetectorService {
         }
     }
     
-    internal func insertEvent(withEventStore store: EKEventStore, withEventName name: String, withDate date: Date, onCompletion completion: (Bool) -> Void) {
+    internal func insertEvent(withEventStore store: EKEventStore, withEventName name: String, withStartDate startDate: Date, withEndDate endDate: Date, onCompletion completion: (Bool) -> Void) {
         let event = EKEvent(eventStore: store)
         event.title = name
-        event.startDate = date
-        event.alarms = [EKAlarm(absoluteDate: date)]
+        event.startDate = startDate
+        event.endDate = endDate
+        event.alarms = [EKAlarm(relativeOffset: TimeInterval(-900))]
+        event.calendar = store.defaultCalendarForNewEvents
         do {
             try store.save(event, span: .thisEvent, commit: true)
             completion(true)
         } catch {
+            print(error)
             completion(false)
         }
     }
