@@ -19,13 +19,19 @@ extension MKDataDetectorService {
         return extractData(fromTextBodies: textBodies, withResultType: .date)
     }
     
-    public func addEventToDefaultCalendar(withAnalysisResult result: DateAnalysisResult, withEndDate endDate: Date, onCompletion completion: @escaping (Bool) -> Void) {
+    public func addEventToDefaultCalendar(withAnalysisResult result: DateAnalysisResult, withEndDate endDate: Date? = nil, onCompletion completion: @escaping (Bool) -> Void) {
         let eventName = (result.source as NSString).replacingCharacters(in: result.rangeInSource, with: "").condensedWhitespace.trimmingCharacters(in: .whitespaces)
         addEventToDefaultCalendar(withEventName: eventName, withStartDate: result.data, withEndDate: endDate, onCompletion: completion)
     }
     
-    public func addEventToDefaultCalendar(withEventName name: String, withStartDate startDate: Date, withEndDate endDate: Date, onCompletion completion: @escaping (Bool) -> Void) {
+    public func addEventToDefaultCalendar(withEventName name: String, withStartDate startDate: Date, withEndDate possibleEndDate: Date? = nil, onCompletion completion: @escaping (Bool) -> Void) {
         let eventStore = EKEventStore()
+        let endDate: Date
+        if let extractedEndDate = possibleEndDate {
+            endDate = extractedEndDate
+        } else {
+            endDate = startDate.addingTimeInterval(TimeInterval(3600))
+        }
         switch EKEventStore.authorizationStatus(for: .event) {
         case .authorized:
             insertEvent(withEventStore: eventStore, withEventName: name, withStartDate: startDate, withEndDate: endDate, onCompletion: completion)

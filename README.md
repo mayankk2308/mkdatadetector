@@ -140,6 +140,8 @@ dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: sampleResult, 
 }
 ```
 
+Note that automatic event name extraction may yield unexpected event names in rare cases. For concrete support, use the former function instead. Additionally, the *withEndDate* parameter is optional, and the event created would then default to being an hour long.
+
 ### Examples
 
 Consider the following inputs:
@@ -164,18 +166,17 @@ You can easily make use of this data, for instance, by adding the events to the 
 ```swift
 dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: meetingAnalysisResult) { success in
     if success {
-        // event added to default calendar as a "Meeting" with alarm set for "9pm tomorrow"
+        // event added to default calendar as a "Meeting" with alarm set for "9pm tomorrow" - lasting an hour long (default)
     }
 }
 
 dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: partyAnalysisResult) { success in
     if success {
-        // event added to default calendar as a "Party" with alarm set for "8pm next Friday"
+        // event added to default calendar as a "Party" with alarm set for "8pm next Friday" - lasting an hour long (default)
     }
 }
 ```
 
-Note that automatic event name extraction may yield unexpected event names in rare cases. For concrete support, use the former function instead.
 
 More capabilities will be added soon.
 
