@@ -57,9 +57,9 @@ let dataDetectorService: MKDataDetectorService = MKDataDetectorService()
 
 For convenience, a generic `AnalysisResult<T>` structure is consistently returned for extraction/analysis results.
 
-`AnalysisResult<T>` contains **4** fields:
+`AnalysisResult<T>` contains **3** fields:
 * Source (`source`) - the source/original complete `String` from which data was detected
-* Source Range (`rangeInSource`) - the `NSRange` of the matched string in the original string
+* Match Range (`rangeInSource`) - the `NSRange` of the matched string in the original string
 * Data String (`dataString`) - the substring from which `data` was matched
 * Data (`data`) - the data `T` extracted from the source input
 
@@ -145,6 +145,13 @@ dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: sampleResult, 
 Note that automatic event name extraction may yield unexpected event names in rare cases. For concrete support, use the former function instead.
 
 Additionally, the __*withEndDate*__ parameter is optional. Not providing a value defaults the event to end after an hour.
+
+It is sometimes also useful to highlight detected data for the user in the user interface before action is taken. This can typically be accomplished by setting attributed text properties for the various text-oriented views across **macOS** and **iOS**. This can easily be accomplished, given a set of retrieved `Analysis<T>` (the default result type for any extraction operation):
+```swift
+if let attributedString = dataDetectorService.attributedString(fromAnalysisResults: sampleResults, withColor: UIColor.blue.cgcolor) {
+    // set UI component
+}
+```
 
 ### Examples
 

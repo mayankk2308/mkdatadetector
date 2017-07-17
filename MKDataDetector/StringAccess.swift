@@ -7,6 +7,11 @@
 //
 
 import Foundation
+#if os(OSX)
+    import Cocoa
+#elseif os(iOS)
+    import UIKit
+#endif
 
 public extension String {
     
@@ -43,6 +48,19 @@ internal extension String {
     var condensedWhitespace: String {
         let components = self.components(separatedBy: .whitespacesAndNewlines)
         return components.filter { !$0.isEmpty }.joined(separator: " ")
+    }
+    
+}
+
+extension MKDataDetectorService {
+    
+    public func attributedString<T>(fromAnalysisResults results: [AnalysisResult<T>], withColor color: CGColor) -> NSMutableAttributedString? {
+        guard let firstResult = results.first else { return nil }
+        let attributedString = NSMutableAttributedString(string: firstResult.source)
+        for result in results {
+            attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: result.rangeInSource)
+        }
+        return attributedString
     }
     
 }
