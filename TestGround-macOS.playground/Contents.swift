@@ -1,6 +1,7 @@
 // Test below - delete tests before commits, or exclude this file in your commits
 import MKDataDetector
 import CoreLocation
+import Cocoa
 
 let dataDetectorService = MKDataDetectorService()
 
@@ -22,6 +23,7 @@ let transits = ["Flight 2334", "EK 239 to Boston", "Emirates Airlines", "United 
 
 print("-----Single Body Date Results-----\n")
 if let singleBodyDateResults = dataDetectorService.extractDates(fromTextBody: textBody) {
+    let text = dataDetectorService.attributedText(fromAnalysisResults: singleBodyDateResults, withColor: NSColor.blue.cgColor)
     for result in singleBodyDateResults {
         print(result.source)
         print(result.data)

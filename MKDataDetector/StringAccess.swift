@@ -58,7 +58,11 @@ extension MKDataDetectorService {
         guard let firstResult = results.first else { return nil }
         let attributedString = NSMutableAttributedString(string: firstResult.source)
         for result in results {
-            attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: result.rangeInSource)
+            #if os(iOS)
+                attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor(cgColor: color), range: result.rangeInSource)
+            #elseif os(OSX)
+                attributedString.addAttribute(NSForegroundColorAttributeName, value: NSColor(cgColor: color) as Any, range: result.rangeInSource)
+            #endif
         }
         return attributedString
     }
