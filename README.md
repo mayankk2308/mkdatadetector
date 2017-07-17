@@ -120,7 +120,7 @@ dataDetectorService.extractLocation(fromAnalysisResult: sampleAnalysisResult) { 
 }
 ```
 
-For **calendar integration**, you can easily create events:
+For **calendar integration**, you can easily create and add events to the default calendar (platform-independent):
 ```swift
 dataDetectorService.addEventToDefaultCalendar(withEventName: sampleText, withStartDate: sampleStartDate, withEndDate: sampleEndDate) { success in
     if success {
@@ -128,6 +128,8 @@ dataDetectorService.addEventToDefaultCalendar(withEventName: sampleText, withSta
     }
 }
 ```
+
+Note that newer versions of iOS/macOS require information from your application's `.plist` for with a cited reason for accessing the user's calendar.
 
 If you have a `DateAnalysisResult`, you can opt for easier event creation that also extracts the event name automatically:
 ```swift
@@ -192,7 +194,7 @@ if let attributedText = dataDetectorService.attributedText(withAnalysisResults: 
 ```
 
 Your `meetingLabel` will now display the original text with the detected information in purple (bold here):
-*"Meeting __at 9pm tomorrow__ and __next Friday at 5pm__"*
+*"Meeting __at 9pm tomorrow__ and __next Friday at 5pm__"*.
 
 ### Limitations
 
