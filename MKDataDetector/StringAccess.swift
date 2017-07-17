@@ -3,7 +3,7 @@
 //  MKDataDetector
 //
 //  Created by Mayank Kumar on 7/16/17.
-//  Copyright © 2017 Mayank Kumar. All rights reserved.
+//  Copyright © 2017 Mayank Kumar. Available under the MIT license.
 //
 
 import Foundation
@@ -39,8 +39,10 @@ public extension String {
 }
 
 internal extension String {
+    
     var condensedWhitespace: String {
         let components = self.components(separatedBy: .whitespacesAndNewlines)
         return components.filter { !$0.isEmpty }.joined(separator: " ")
     }
+    
 }

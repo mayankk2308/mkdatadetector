@@ -1,7 +1,6 @@
 # **MKDataDetector for Swift**
 [![Build Status](https://travis-ci.org/mayankk2308/mkdatadetector-swift.svg?branch=master)](https://travis-ci.org/mayankk2308/mkdatadetector-swift)
-![Platform badge](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS-brightgreen.svg)
-[![apm](https://img.shields.io/apm/l/vim-mode.svg)]()
+![Platform badge](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS-blue.svg)
 
 A simple convenience wrapper for data detection from natural language text that simplifies data extraction and handling.
 
@@ -110,7 +109,7 @@ To retrieve precise **location information** from a **valid** `String` address:
 ```swift
 dataDetectorService.extractLocation(fromAddress: sampleText) { location in
     if extractedLocation = location {
-        // CLLocation object available
+        // CLLocation object available, requires importing 'CoreLocation'
     }
 }
 ```
@@ -119,7 +118,7 @@ Alternatively, if you already have an `AddressAnalysisResult`:
 ```swift
 dataDetectorService.extractLocation(fromAnalysisResult: sampleAnalysisResult) { location in
     if extractedLocation = location {
-        // CLLocation object available
+        // CLLocation object available, requires importing 'CoreLocation'
     }
 }
 ```

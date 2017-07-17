@@ -1,7 +1,6 @@
 // Test below - delete tests before commits, or exclude this file in your commits
 import MKDataDetector
 import CoreLocation
-import XCPlayground
 
 let dataDetectorService = MKDataDetectorService()
 
@@ -137,18 +136,3 @@ print(link.links!)
 print(transit.transitInfo!)
 print(address.addresses!)
 print(phone.phoneNumbers!)
-
-print("\n-----Test Location Extraction-----\n")
-
-dataDetectorService.extractLocation(fromAddress: legalAddress) { location in
-//    print(location)
-}
-
-// Will save an event in device calendar
-//dataDetectorService.addEventToDefaultCalendar(withEventName: "TestEvent", withStartDate: textBody.dates!.first!, withEndDate: (textBody.dates!.first?.addingTimeInterval(TimeInterval(3600)))!) { success in
-//    print(success)
-//}
-
-// Calendar integration testing should be done in an actual iOS/macOS application
-
-//XCPSetExecutionShouldContinueIndefinitely()

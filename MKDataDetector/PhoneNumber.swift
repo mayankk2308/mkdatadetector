@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Contacts
 
 extension MKDataDetectorService {
     
@@ -17,5 +18,5 @@ extension MKDataDetectorService {
     public func extractPhoneNumbers(fromTextBodies textBodies: [String]) -> [[PhoneNumberAnalysisResult]?]? {
         return extractData(fromTextBodies: textBodies, withResultType: .phoneNumber)
     }
-    
+
 }
