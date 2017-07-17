@@ -54,7 +54,7 @@ internal extension String {
 
 extension MKDataDetectorService {
     
-    public func attributedString<T>(fromAnalysisResults results: [AnalysisResult<T>], withColor color: CGColor) -> NSMutableAttributedString? {
+    public func attributedText<T>(fromAnalysisResults results: [AnalysisResult<T>], withColor color: CGColor) -> NSMutableAttributedString? {
         guard let firstResult = results.first else { return nil }
         let attributedString = NSMutableAttributedString(string: firstResult.source)
         for result in results {

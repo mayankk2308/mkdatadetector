@@ -146,9 +146,9 @@ Note that automatic event name extraction may yield unexpected event names in ra
 
 Additionally, the __*withEndDate*__ parameter is optional. Not providing a value defaults the event to end after an hour.
 
-It is sometimes also useful to highlight detected data for the user in the user interface before action is taken. This can typically be accomplished by setting attributed text properties for the various text-oriented views across **macOS** and **iOS**. This can easily be accomplished, given a set of retrieved `Analysis<T>` (the default result type for any extraction operation):
+It is sometimes also useful to highlight detected data for the user in the user interface before action is taken. This can typically be accomplished by setting attributed text properties for the various text-oriented views across **macOS** and **iOS**. This can easily be accomplished, given a set of retrieved `AnalysisResult<T>` (the default result type for any extraction operation):
 ```swift
-if let attributedString = dataDetectorService.attributedString(fromAnalysisResults: sampleResults, withColor: UIColor.blue.cgcolor) {
+if let attributedText = dataDetectorService.attributedText(fromAnalysisResults: sampleResults, withColor: UIColor.blue.cgcolor) {
     // set UI component
 }
 ```
@@ -187,6 +187,16 @@ dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: partyAnalysisR
     }
 }
 ```
+
+Lets assume that the `meeting` text was embedded in a `UILabel` or equivalent text-oriented view. It was also expanded to add *" and next Friday at 5pm"*. You can easily update the label to display the multiple detected pieces of information (typically a substring of the text in the label):
+```swift
+if let attributedText = dataDetectorService.attributedText(withAnalysisResults: meetingAnalysisResults, withColor: UIColor.purple.cgcolor) {
+    meetingLabel.attributedText = attributedText
+}
+```
+
+Your `meetingLabel` will now display the original text with the detected information in purple (bold here):
+*"Meeting __at 9pm tomorrow__ and __next Friday at 5pm__"*
 
 ### Limitations
 
