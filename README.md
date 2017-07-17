@@ -4,8 +4,6 @@
 
 A simple convenience wrapper for data detection from natural language text that simplifies data extraction and handling.
 
-**Core Developers**: [Mayank Kumar](https://github.com/mayankk2308), [Jeet Parte](https://github.com/jeetparte) & [Pinak Jalan](https://github.com/pinakj).
-
 ## Purpose
 
 While **Apple's** `NSDataDetector` is useful for extracting useful information from natural language text, it can sometimes be cumbersome to use and a little difficult to adopt. To circumvent this issue, we are developing an encapsulating framework called `MKDataDetector` to streamline the original API, simplify its usage, and build on it with additional supporting capabilities that use information effectively.
@@ -205,9 +203,9 @@ Additionally, `NSDataDetector`, while having the facility of extracting airline 
 ## Contact
 
 You can contact:
-* Mayank Kumar - via [email](mailto:mayankk2308@gmail.com) or [LinkedIn](https://www.linkedin.com/in/mayank-kumar-478245b1/)
-* Jeet Parte - via [email](mailto:jeetparte@gmail.com)
-* Pinak Jalan - via [email](mailto:pinak.jalan@me.com)
+* [Mayank Kumar](https://github.com/mayankk2308) - via [email](mailto:mayankk2308@gmail.com) or [LinkedIn](https://www.linkedin.com/in/mayank-kumar-478245b1/)
+* [Jeet Parte](https://github.com/jeetparte) - via [email](mailto:jeetparte@gmail.com)
+* [Pinak Jalan](https://github.com/pinakj) - via [email](mailto:pinak.jalan@me.com)
 
 for any inquires or community-related issues.
 
