@@ -11,11 +11,11 @@ import Foundation
 extension MKDataDetectorService {
     
     public func extractLinks(fromTextBody textBody: String) -> [URLAnalysisResult]? {
-        return extractData(fromTextBody: textBody, withResultType: .link)
+        return extractData(fromTextBody: textBody, withResultTypes: [.link])
     }
     
     public func extractLinks(fromTextBodies textBodies: [String]) -> [[URLAnalysisResult]?]? {
-        return extractData(fromTextBodies: textBodies, withResultType: .link)
+        return extractData(fromTextBodies: textBodies, withResultTypes: [.link])
     }
 
 }

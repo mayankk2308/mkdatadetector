@@ -6,7 +6,7 @@
 //  Copyright © 2017 Mayank Kumar. Available under the MIT license.
 //
 
-enum ResultType {
+public enum ResultType {
     case date
     case address
     case link

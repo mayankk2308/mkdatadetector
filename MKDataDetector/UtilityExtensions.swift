@@ -10,24 +10,28 @@ import Foundation
 
 extension MKDataDetectorService {
     
-    internal func dataDetectorOfType(withResultType resultType: ResultType) -> NSDataDetector? {
+    internal func dataDetectorOfType(withResultTypes resultTypes: [ResultType]) -> NSDataDetector? {
         do {
-            guard let detectorType = checkingTypeMap[resultType] else { return nil }
-            return try NSDataDetector(types: detectorType)
+            var checkingTypes = NSTextCheckingResult.CheckingType()
+            for resultType in resultTypes {
+                guard let type = checkingTypeMap[resultType] else { return nil }
+                checkingTypes.insert(type)
+            }
+            return checkingTypes.isEmpty ? nil : try NSDataDetector(types: checkingTypes.rawValue)
         } catch { return nil }
     }
     
-    internal func retrieveData<T>(fromMatch match: NSTextCheckingResult, withResultType type: ResultType) -> T? {
+    internal func retrieveData<T>(fromMatch match: NSTextCheckingResult, withMatchType type: NSTextCheckingResult.CheckingType) -> T? {
         switch type {
-        case .date:
+        case NSTextCheckingResult.CheckingType.date:
             return match.date as? T
-        case .address:
+        case NSTextCheckingResult.CheckingType.address:
             return match.addressComponents as? T
-        case .link:
+        case NSTextCheckingResult.CheckingType.link:
             return match.url as? T
-        case .phoneNumber:
+        case NSTextCheckingResult.CheckingType.phoneNumber:
             return match.phoneNumber as? T
-        case .transitInformation:
+        default:
             return match.components as? T
         }
     }

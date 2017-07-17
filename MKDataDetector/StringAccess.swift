@@ -37,7 +37,7 @@ public extension String {
     
     private func retrieveMappedData<T>(withResultType type: ResultType) -> [T]? {
         let dataDetectorService = MKDataDetectorService()
-        guard let results: [AnalysisResult<T>] = dataDetectorService.extractData(fromTextBody: self, withResultType: type) else { return nil }
+        guard let results: [AnalysisResult<T>] = dataDetectorService.extractData(fromTextBody: self, withResultTypes: [type]) else { return nil }
         return results.flatMap { $0.data }
     }
     

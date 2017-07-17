@@ -11,11 +11,11 @@ import Foundation
 extension MKDataDetectorService {
     
     public func extractTransitInformation(fromTextBody textBody: String) -> [TransitAnalysisResult]? {
-        return extractData(fromTextBody: textBody, withResultType: .transitInformation)
+        return extractData(fromTextBody: textBody, withResultTypes: [.transitInformation])
     }
     
     public func extractTransitInformation(fromTextBodies textBodies: [String]) -> [[TransitAnalysisResult]?]? {
-        return extractData(fromTextBodies: textBodies, withResultType: .transitInformation)
+        return extractData(fromTextBodies: textBodies, withResultTypes: [.transitInformation])
     }
     
 }

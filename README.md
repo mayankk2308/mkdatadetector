@@ -51,12 +51,13 @@ let dataDetectorService: MKDataDetectorService = MKDataDetectorService()
 
 ### Result Handling
 
-For convenience, a generic `AnalysisResult<T>` structure is consistently returned for extraction/analysis results.
+For convenience, a generic `AnalysisResult<T>` structure is consistently returned for extraction/analysis results. An enumeration called `ResultType` is also included for convenient identification of results.
 
-`AnalysisResult<T>` contains **4** fields:
+`AnalysisResult<T>` contains **5** fields:
 * Source (`source`) - the source/original complete `String` from which data was detected
 * Match Range (`rangeInSource`) - the `NSRange` of the matched string in the original string
 * Data String (`dataString`) - the substring from which `data` was matched
+* Data Type (`dataType`) - the type `ResultType` of data returned
 * Data (`data`) - the data `T` extracted from the source input
 
 Additionally, for convenience, the generic struct has a `typealias` per result type:
@@ -97,6 +98,25 @@ if let combinedResults = dataDetectorService.extractDates(withTextBodies: [sampl
 For given `textBodies`, the `dataDetectorService` returns an array of `[DateAnalysisResult]` objects.
 
 The extraction process is uniform for other types of data features such as phone numbers, addresses, links, and more.
+
+In cases where detection with multiple `ResultType`s are required, the following implementation may be used:
+```swift
+if let results = dataDetectorService.extractInformation(fromTextBody textBody: String, withResultTypes: .date, .address ...) {
+    for result in results {
+        switch result.dataType {
+            case .date:
+            // force cast as DateAnalysisResult - create and save events, etc.
+            case .address:
+            // force cast as AddressAnalysisResult - get location, etc.
+            .
+            .
+            // for all result types you are concerned with, i.e, your input parameters
+        }
+    }
+}
+```
+
+An implementation for extracting multiple types from multiple text bodies is also included.
 
 ### Additional Capabilities
 

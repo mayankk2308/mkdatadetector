@@ -12,11 +12,11 @@ import Foundation
 extension MKDataDetectorService {
     
     public func extractDates(fromTextBody textBody: String) -> [DateAnalysisResult]? {
-        return extractData(fromTextBody: textBody, withResultType: .date)
+        return extractData(fromTextBody: textBody, withResultTypes: [.date])
     }
     
     public func extractDates(fromTextBodies textBodies: [String]) -> [[DateAnalysisResult]?]? {
-        return extractData(fromTextBodies: textBodies, withResultType: .date)
+        return extractData(fromTextBodies: textBodies, withResultTypes: [.date])
     }
     
     public func addEventToDefaultCalendar(withAnalysisResult result: DateAnalysisResult, withEndDate endDate: Date? = nil, onCompletion completion: @escaping (Bool) -> Void) {

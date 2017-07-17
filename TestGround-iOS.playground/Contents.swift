@@ -139,3 +139,28 @@ print(link.links!)
 print(transit.transitInfo!)
 print(address.addresses!)
 print(phone.phoneNumbers!)
+
+print("\n-----Mixed Request Results-----\n")
+
+let mixedText = "Call Mayank on +1123456789 on 2017/13/12 at 5pm when you reach 190 Belchertown Rd, Amherst, MA - 01044 USA."
+
+if let results = dataDetectorService.extractInformation(fromTextBody: mixedText, withResultTypes: .date, .address, .phoneNumber) {
+    for result in results {
+        switch result.dataType {
+        case .date:
+            let date = result.data as! Date
+            print(date)
+            break
+        case .address:
+            let address = result.data as! AddressInfo
+            print(address)
+            break
+        case .phoneNumber:
+            let phoneNumber = result.data as! String
+            print(phoneNumber)
+            break
+        default:
+            continue
+        }
+    }
+}

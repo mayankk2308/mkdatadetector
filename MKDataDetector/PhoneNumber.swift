@@ -12,11 +12,11 @@ import Contacts
 extension MKDataDetectorService {
     
     public func extractPhoneNumbers(fromTextBody textBody: String) -> [PhoneNumberAnalysisResult]? {
-        return extractData(fromTextBody: textBody, withResultType: .phoneNumber)
+        return extractData(fromTextBody: textBody, withResultTypes: [.phoneNumber])
     }
     
     public func extractPhoneNumbers(fromTextBodies textBodies: [String]) -> [[PhoneNumberAnalysisResult]?]? {
-        return extractData(fromTextBodies: textBodies, withResultType: .phoneNumber)
+        return extractData(fromTextBodies: textBodies, withResultTypes: [.phoneNumber])
     }
 
 }

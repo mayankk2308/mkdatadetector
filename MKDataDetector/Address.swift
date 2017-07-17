@@ -12,11 +12,11 @@ import CoreLocation
 extension MKDataDetectorService {
     
     public func extractAddresses(fromTextBody textBody: String) -> [AddressAnalysisResult]? {
-        return extractData(fromTextBody: textBody, withResultType: .address)
+        return extractData(fromTextBody: textBody, withResultTypes: [.address])
     }
     
     public func extractAddresses(fromTextBodies textBodies: [String]) -> [[AddressAnalysisResult]?]? {
-        return extractData(fromTextBodies: textBodies, withResultType: .address)
+        return extractData(fromTextBodies: textBodies, withResultTypes: [.address])
     }
     
     public func extractLocation(fromAnalysisResult result: AddressAnalysisResult, onCompletion completion: @escaping (CLLocation?) -> Void) {
