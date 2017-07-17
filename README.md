@@ -4,8 +4,6 @@
 
 A simple convenience wrapper for data detection from natural language text that simplifies data extraction and handling.
 
-Currently in the _**testing phase**_.
-
 **Core Developers**: [Mayank Kumar](https://github.com/mayankk2308), [Jeet Parte](https://github.com/jeetparte) & [Pinak Jalan](https://github.com/pinakj).
 
 ## Purpose
