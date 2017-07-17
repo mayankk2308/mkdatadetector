@@ -66,9 +66,11 @@ For convenience, a generic `AnalysisResult<T>` structure is consistently returne
 Additionally, for convenience, the generic struct has a `typealias` per result type:
 * `DateAnalysisResult` - for `AnalysisResult<Date>`
 * `URLAnalysisResult` - for `AnalysisResult<URL>`
-* `AddressAnalysisResult` - for `AnalysisResult<[String : String]>`
+* `AddressAnalysisResult` - for `AnalysisResult<AddressInfo>`
 * `PhoneNumberAnalysisResult` - for `AnalysisResult<String>`
-* `TransitAnalysisResult` - for `AnalysisResult<[String : String]>`
+* `TransitAnalysisResult` - for `AnalysisResult<TransitInfo>`
+
+Because the address and transit information results are structures themselves (`[String : String]`), they are conveniently typealiased as `AddressInfo` and `TransitInfo`. For convenience, `Address` and `Transit` **_structs_** with the associated keys are provided for easy access. For example, to access the zip-code in an extracted address, simply use the key `Address.zip`.
 
 ### Implementation
 
@@ -99,8 +101,6 @@ if let combinedResults = dataDetectorService.extractDates(withTextBodies: [sampl
 For given `textBodies`, the `dataDetectorService` returns an array of `[DateAnalysisResult]` objects.
 
 The extraction process is uniform for other types of data features such as phone numbers, addresses, links, and more.
-
-For more complex extractions - such as requests for addresses and transit details, the returned data is of type `[String : String]`. For convenience, `Address` and `Transit` structures with the associated keys are provided for easy access. For example, to access the zip-code in an extracted address, simply use the key `Address.zip`.
 
 ### Additional Capabilities
 

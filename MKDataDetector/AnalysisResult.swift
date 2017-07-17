@@ -12,8 +12,10 @@ public struct AnalysisResult<T> {
     public var data: T
 }
 
+public typealias AddressInfo = [String : String]
+public typealias TransitInfo = [String : String]
 public typealias PhoneNumberAnalysisResult = AnalysisResult<String>
 public typealias DateAnalysisResult = AnalysisResult<Date>
 public typealias URLAnalysisResult = AnalysisResult<URL>
-public typealias AddressAnalysisResult = AnalysisResult<[String : String]>
-public typealias TransitAnalysisResult = AnalysisResult<[String : String]>
+public typealias AddressAnalysisResult = AnalysisResult<AddressInfo>
+public typealias TransitAnalysisResult = AnalysisResult<TransitInfo>
