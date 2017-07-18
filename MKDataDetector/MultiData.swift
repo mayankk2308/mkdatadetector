@@ -14,7 +14,7 @@ extension MKDataDetectorService {
         return types.isEmpty ? nil : extractData(fromTextBody: textBody, withResultTypes: types)
     }
     
-    public func extractInformation(fromTextBodies textBodies: [String], withResultTypes types: ResultType ...) -> [[AnalysisResult<AnalysisData>]?]? {
+    public func extractInformation(fromTextBodies textBodies: [String], withResultTypes types: ResultType ...) -> [[AnalysisResult<AnalysisData>]]? {
         return types.isEmpty ? nil : extractData(fromTextBodies: textBodies, withResultTypes: types)
     }
     

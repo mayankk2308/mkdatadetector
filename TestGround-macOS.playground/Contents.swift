@@ -34,8 +34,8 @@ if let singleBodyDateResults = dataDetectorService.extractDates(fromTextBody: te
 print("\n-----Multiple Bodies Date Results-----\n")
 
 if let combinedDateResults = dataDetectorService.extractDates(fromTextBodies: textBodies) {
-    for individualResults in combinedDateResults where individualResults != nil {
-        for result in individualResults! {
+    for individualResults in combinedDateResults {
+        for result in individualResults {
             print(result.source)
             print(result.data)
             print()
@@ -56,8 +56,8 @@ if let addressResults = dataDetectorService.extractAddresses(fromTextBody: addre
 print("\n-----Multiple Bodies Address Results-----\n")
 
 if let combinedAddressResults = dataDetectorService.extractAddresses(fromTextBodies: addresses) {
-    for individualResults in combinedAddressResults where individualResults != nil {
-        for result in individualResults! {
+    for individualResults in combinedAddressResults {
+        for result in individualResults {
             print(result.source)
             print(result.data)
             print()
@@ -78,8 +78,8 @@ if let URLResults = dataDetectorService.extractLinks(fromTextBody: link) {
 print("\n-----Multiple Bodies URL Results-----\n")
 
 if let combinedURLResults = dataDetectorService.extractLinks(fromTextBodies: links) {
-    for individualResults in combinedURLResults where individualResults != nil {
-        for result in individualResults! {
+    for individualResults in combinedURLResults {
+        for result in individualResults {
             print(result.source)
             print(result.data)
             print()
@@ -100,8 +100,8 @@ if let phoneResults = dataDetectorService.extractPhoneNumbers(fromTextBody: phon
 print("\n-----Multiple Bodies Phone Results-----\n")
 
 if let combinedPhoneResults = dataDetectorService.extractPhoneNumbers(fromTextBodies: phones) {
-    for individualResults in combinedPhoneResults where individualResults != nil {
-        for result in individualResults! {
+    for individualResults in combinedPhoneResults {
+        for result in individualResults {
             print(result.source)
             print(result.data)
             print()
@@ -122,8 +122,8 @@ if let transitResults = dataDetectorService.extractTransitInformation(fromTextBo
 print("\n-----Multiple Bodies Transit Results-----\n")
 
 if let combinedTransitResults = dataDetectorService.extractTransitInformation(fromTextBodies: transits) {
-    for individualResults in combinedTransitResults where individualResults != nil {
-        for result in individualResults! {
+    for individualResults in combinedTransitResults {
+        for result in individualResults {
             print(result.source)
             print(result.data)
             print()

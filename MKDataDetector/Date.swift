@@ -15,7 +15,7 @@ extension MKDataDetectorService {
         return extractData(fromTextBody: textBody, withResultTypes: [.date])
     }
     
-    public func extractDates(fromTextBodies textBodies: [String]) -> [[DateAnalysisResult]?]? {
+    public func extractDates(fromTextBodies textBodies: [String]) -> [[DateAnalysisResult]]? {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.date])
     }
     

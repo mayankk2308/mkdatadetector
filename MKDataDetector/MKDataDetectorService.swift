@@ -55,13 +55,12 @@ public class MKDataDetectorService {
         return analysisResults.isEmpty ? nil : analysisResults
     }
     
-    internal func extractData<T>(fromTextBodies textBodies: [String], withResultTypes types: [ResultType]) -> [[AnalysisResult<T>]?]? {
-        var result = [[AnalysisResult<T>]?]()
+    internal func extractData<T>(fromTextBodies textBodies: [String], withResultTypes types: [ResultType]) -> [[AnalysisResult<T>]]? {
+        var result = [[AnalysisResult<T>]]()
         guard let detector = dataDetectorOfType(withResultTypes: types) else { return nil }
         for textBody in textBodies {
-            if let extractedData: [AnalysisResult<T>] = extractData(fromTextBody: textBody, withDetector: detector, withResultTypes: types) {
+            guard let extractedData: [AnalysisResult<T>] = extractData(fromTextBody: textBody, withDetector: detector, withResultTypes: types) else { continue }
                 result.append(extractedData)
-            }
         }
         return result.isEmpty ? nil : result
     }

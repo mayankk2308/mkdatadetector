@@ -14,7 +14,7 @@ extension MKDataDetectorService {
         return extractData(fromTextBody: textBody, withResultTypes: [.transitInformation])
     }
     
-    public func extractTransitInformation(fromTextBodies textBodies: [String]) -> [[TransitAnalysisResult]?]? {
+    public func extractTransitInformation(fromTextBodies textBodies: [String]) -> [[TransitAnalysisResult]]? {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.transitInformation])
     }
     

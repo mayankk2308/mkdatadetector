@@ -14,7 +14,7 @@ extension MKDataDetectorService {
         return extractData(fromTextBody: textBody, withResultTypes: [.link])
     }
     
-    public func extractLinks(fromTextBodies textBodies: [String]) -> [[URLAnalysisResult]?]? {
+    public func extractLinks(fromTextBodies textBodies: [String]) -> [[URLAnalysisResult]]? {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.link])
     }
 

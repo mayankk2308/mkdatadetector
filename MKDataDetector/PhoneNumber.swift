@@ -15,7 +15,7 @@ extension MKDataDetectorService {
         return extractData(fromTextBody: textBody, withResultTypes: [.phoneNumber])
     }
     
-    public func extractPhoneNumbers(fromTextBodies textBodies: [String]) -> [[PhoneNumberAnalysisResult]?]? {
+    public func extractPhoneNumbers(fromTextBodies textBodies: [String]) -> [[PhoneNumberAnalysisResult]]? {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.phoneNumber])
     }
 
