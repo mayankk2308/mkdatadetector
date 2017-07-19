@@ -11,10 +11,6 @@ import CoreLocation
 
 /// - ToDo: Add description
 ///
-/// You declare an instance as follows:
-/// ````
-/// let dataDetectorService: MKDataDetectorService = MKDataDetectorService()
-/// ````
 public class MKDataDetectorService {
     
     internal let checkingTypeMap = [

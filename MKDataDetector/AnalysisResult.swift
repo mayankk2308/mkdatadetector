@@ -5,6 +5,7 @@
 //  Created by Mayank Kumar on 7/10/17.
 //  Copyright © 2017 Mayank Kumar. Available under the MIT license.
 //
+
 /// - ToDo: Add description
 public protocol AnalysisData {}
 
