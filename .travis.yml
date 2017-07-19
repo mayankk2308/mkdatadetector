@@ -1,4 +1,7 @@
-language: swift
+language: objective-c
 osx_image: xcode8.3
-xcode_workspace: MKDataDetector.xcworkspace
+xcode_project: MKDataDetector.xcodeproj
 xcode_scheme: MKDataDetectorTests
+xcode_sdk: macosx10.12
+script:
+    xcodebuild clean build test -project MKDataDetector.xcodeproj -scheme MKDataDetectorTests
