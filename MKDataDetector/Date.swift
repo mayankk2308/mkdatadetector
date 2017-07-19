@@ -11,10 +11,19 @@ import Foundation
 
 extension MKDataDetectorService {
     
+    /// Retrieves dates matched from a given body of text along with the range of each substring that matched.
+    ///
+    /// - Parameter textBody: A body of natural language text.
+    /// - Returns: An array of `DateAnalysisResult` instances or `nil` if no dates could be found.
     public func extractDates(fromTextBody textBody: String) -> [DateAnalysisResult]? {
         return extractData(fromTextBody: textBody, withResultTypes: [.date])
     }
     
+    /// Retrieves dates matched from the given bodies of text along with the range of each substring that matched.
+    ///
+    /// - Parameter textBodies: A set of multiple bodies of natural language text.
+    /// - Returns: An array of `[DateAnalysisResult]` instances or `nil` if no dates could be found.
+    /// - Note: Inside the returned array, a non-empty `[DateAnalysisResult]` instance is returned for each text body which contains a match.
     public func extractDates(fromTextBodies textBodies: [String]) -> [[DateAnalysisResult]]? {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.date])
     }

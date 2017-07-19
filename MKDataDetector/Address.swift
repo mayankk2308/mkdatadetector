@@ -11,10 +11,19 @@ import CoreLocation
 
 extension MKDataDetectorService {
     
+    /// Retrieves address components matched from a given body of text along with the range of each substring that matched.
+    ///
+    /// - Parameter textBody: A body of natural language text.
+    /// - Returns: An array of `AddressAnalysisResult` instances or `nil` if no address components could be found.
     public func extractAddresses(fromTextBody textBody: String) -> [AddressAnalysisResult]? {
         return extractData(fromTextBody: textBody, withResultTypes: [.address])
     }
     
+    /// Retrieves address componenets matched from the given bodies of text along with the range of each substring that matched.
+    ///
+    /// - Parameter textBodies: A set of multiple bodies of natural language text.
+    /// - Returns: An array of `[AddressAnalysisResult]` instances or `nil` if no address components could be found.
+    /// - Note: Inside the returned array, a non-empty `[AddressAnalysisResult]` instance is returned for each text body which contains a match.
     public func extractAddresses(fromTextBodies textBodies: [String]) -> [[AddressAnalysisResult]]? {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.address])
     }
