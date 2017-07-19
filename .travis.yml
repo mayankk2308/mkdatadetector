@@ -1,4 +1,4 @@
 language: swift
 osx_image: xcode8.3
-xcode_project: MKDataDetector.xcworkspace # path to your xcodeproj folder
+xcode_workspace: MKDataDetector.xcworkspace
 xcode_scheme: MKDataDetectorTests
