@@ -28,11 +28,21 @@ extension MKDataDetectorService {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.address])
     }
     
-    public func extractLocation(fromAnalysisResult result: AddressAnalysisResult, onCompletion completion: @escaping (CLLocation?) -> Void) {
+    /// Retrieves the geographic location of an address analysis result.
+    ///
+    /// - Parameters:
+    ///   - result: The address analysis result.
+    ///   - completion: Called with a `CLLocation` object, which will be `nil` if it could not be generated.
+    public func extractLocation(fromAnalysisResult result: AddressAnalysisResult, onCompletion completion: @escaping locationCompletion) {
         extractLocation(fromAddress: result.source, onCompletion: completion)
     }
     
-    public func extractLocation(fromAddress address: String, onCompletion completion: @escaping (CLLocation?) -> Void) {
+    /// Retrieves the geographic location of a valid address.
+    ///
+    /// - Parameters:
+    ///   - address: A valid address.
+    ///   - completion: Called with a `CLLocation` object, which will be `nil` if it could not be generated.
+    public func extractLocation(fromAddress address: String, onCompletion completion: @escaping locationCompletion) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { placemarks, error in
             guard let location = self.extractLocation(fromPlacemarks: placemarks, withError: error) else { return }
@@ -40,6 +50,12 @@ extension MKDataDetectorService {
         }
     }
     
+    /// Retrieves the geographic location obtained from the first placemark.
+    ///
+    /// - Parameters:
+    ///   - placemarks: An array of placemarks.
+    ///   - error: An error that may have occurred in retrieval.
+    /// - Returns: A `CLLocation` object or `nil` if it could not be generated.
     internal func extractLocation(fromPlacemarks placemarks: [CLPlacemark]?, withError error: Error?) -> CLLocation? {
         if error == nil {
             guard let placemarks = placemarks, let placemark = placemarks.first else { return nil }

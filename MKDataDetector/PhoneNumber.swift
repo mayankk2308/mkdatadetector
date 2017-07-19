@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Contacts
 
 extension MKDataDetectorService {
     

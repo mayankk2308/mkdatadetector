@@ -28,12 +28,27 @@ extension MKDataDetectorService {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.date])
     }
     
-    public func addEventToDefaultCalendar(withAnalysisResult result: DateAnalysisResult, withEndDate endDate: Date? = nil, onCompletion completion: @escaping (Bool) -> Void) {
+    /// Adds events to the default device calendar using a date analysis result.
+    ///
+    /// - Parameters:
+    ///   - result: A date analysis result.
+    ///   - endDate: The end date for the event.
+    ///   - completion: Provides confirmation or failure of the execution of the task.
+    /// - Note: The `endDate` parameter is optional. Not providing this property defaults the event to end an hour from the detected starting time. Additionally, this function automatically determines the event name. This may sometimes yield unexpected results.
+    public func addEventToDefaultCalendar(withAnalysisResult result: DateAnalysisResult, withEndDate endDate: Date? = nil, onCompletion completion: @escaping successCompletion) {
         let eventName = (result.source as NSString).replacingCharacters(in: result.rangeInSource, with: "").condensedWhitespace.trimmingCharacters(in: .whitespaces)
         addEventToDefaultCalendar(withEventName: eventName, withStartDate: result.data, withEndDate: endDate, onCompletion: completion)
     }
     
-    public func addEventToDefaultCalendar(withEventName name: String, withStartDate startDate: Date, withEndDate possibleEndDate: Date? = nil, onCompletion completion: @escaping (Bool) -> Void) {
+    /// Adds events to the default device calendar given specific details.
+    ///
+    /// - Parameters:
+    ///   - name: The name of the event
+    ///   - startDate: The start date of the event
+    ///   - possibleEndDate: The end date of the event
+    ///   - completion: Provides confirmation or failure of the execution of the task.
+    /// - Note: The `endDate` parameter is optional. Not providing this property defaults the event to end an hour from the detected starting time.
+    public func addEventToDefaultCalendar(withEventName name: String, withStartDate startDate: Date, withEndDate possibleEndDate: Date? = nil, onCompletion completion: @escaping successCompletion) {
         let eventStore = EKEventStore()
         let endDate: Date
         if let extractedEndDate = possibleEndDate {
@@ -61,7 +76,15 @@ extension MKDataDetectorService {
         }
     }
     
-    internal func insertEvent(withEventStore store: EKEventStore, withEventName name: String, withStartDate startDate: Date, withEndDate endDate: Date, onCompletion completion: (Bool) -> Void) {
+    /// Helper for inserting events into the event store.
+    ///
+    /// - Parameters:
+    ///   - store: The event store.
+    ///   - name: The name of the event.
+    ///   - startDate: The start date of the event.
+    ///   - endDate: The end date of the event
+    ///   - completion: Provides confimation or failure of the executation of the task.
+    internal func insertEvent(withEventStore store: EKEventStore, withEventName name: String, withStartDate startDate: Date, withEndDate endDate: Date, onCompletion completion: successCompletion) {
         let event = EKEvent(eventStore: store)
         event.title = name
         event.startDate = startDate

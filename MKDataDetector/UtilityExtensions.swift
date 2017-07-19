@@ -10,6 +10,10 @@ import Foundation
 
 extension MKDataDetectorService {
     
+    /// Supporting utility for generating an appropriate detector.
+    ///
+    /// - Parameter resultTypes: The types to detect.
+    /// - Returns: An `NSDataDetector` or `nil` if it could not be instantiated.
     internal func dataDetectorOfType(withResultTypes resultTypes: [ResultType]) -> NSDataDetector? {
         do {
             var checkingTypes = NSTextCheckingResult.CheckingType()
@@ -21,6 +25,13 @@ extension MKDataDetectorService {
         } catch { return nil }
     }
     
+    
+    /// Supporting utility for retrieving results from matches with appropriate type.
+    ///
+    /// - Parameters:
+    ///   - match: An `NSTextCheckingResult` instance.
+    ///   - type: The type of match.
+    /// - Returns: The result of the match casted generically.
     internal func retrieveData<T>(fromMatch match: NSTextCheckingResult, withMatchType type: NSTextCheckingResult.CheckingType) -> T? {
         switch type {
         case NSTextCheckingResult.CheckingType.date:
@@ -36,6 +47,12 @@ extension MKDataDetectorService {
         }
     }
     
+    /// Supporting utility for generating a substring from a string given a range.
+    ///
+    /// - Parameters:
+    ///   - textBody: A body of natural language text.
+    ///   - range: The range of the target substring.
+    /// - Returns: A substring of `textBody` based on the `range`.
     internal func extractSource(fromTextBody textBody: String, usingRange range: NSRange) -> String {
         return (textBody as NSString).substring(with: range)
     }
