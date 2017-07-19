@@ -9,6 +9,12 @@
 import Foundation
 import CoreLocation
 
+/// - ToDo: Add description
+///
+/// You declare an instance as follows:
+/// ````
+/// let dataDetectorService: MKDataDetectorService = MKDataDetectorService()
+/// ````
 public class MKDataDetectorService {
     
     internal let checkingTypeMap = [
@@ -27,6 +33,7 @@ public class MKDataDetectorService {
         NSTextCheckingResult.CheckingType.transitInformation.rawValue: ResultType.transitInformation
     ]
     
+    /// Initializes and returns an `MKDataDetectorService` instance.
     public init() {}
     
     internal func extractData<T>(fromTextBody textBody: String, withDetector detector: NSDataDetector? = nil, withResultTypes types: [ResultType]) -> [AnalysisResult<T>]? {
