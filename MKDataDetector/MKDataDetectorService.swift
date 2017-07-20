@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import CoreLocation
-
 
 /// The primary service class that drives MKDataDetector capabilities.
 public class MKDataDetectorService {

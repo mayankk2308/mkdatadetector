@@ -6,8 +6,6 @@
 //  Copyright © 2017 Mayank Kumar. Available under the MIT license.
 //
 
-import CoreLocation
-
 /// Defines types that may be retrieved as analysis result data.
 public protocol AnalysisData {}
 

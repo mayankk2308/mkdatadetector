@@ -83,7 +83,7 @@ extension MKDataDetectorService {
     ///   - name: The name of the event.
     ///   - startDate: The start date of the event.
     ///   - endDate: The end date of the event
-    ///   - completion: Provides confimation or failure of the executation of the task.
+    ///   - completion: Provides confirmation or failure of the executation of the task.
     internal func insertEvent(withEventStore store: EKEventStore, withEventName name: String, withStartDate startDate: Date, withEndDate endDate: Date, onCompletion completion: successCompletion) {
         let event = EKEvent(eventStore: store)
         event.title = name
