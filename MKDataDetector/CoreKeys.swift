@@ -26,7 +26,7 @@ public struct Address {
     /// A key that corresponds to the state or province component of the address.
     public static let state = NSTextCheckingStateKey
 
-    //Keys for which detection is unavailable in the original NSDataDetector API:
+    // MARK:- Keys for which detection is unavailable in the original NSDataDetector API:
     
 //    /// A key that corresponds to the name component of the address.
 //    public static let name = NSTextCheckingNameKey
