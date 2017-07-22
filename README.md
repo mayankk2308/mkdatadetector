@@ -247,7 +247,11 @@ Your `meetingLabel` will now display the original text with the detected informa
 
 According to Apple's documentation on `NSDataDetector`, the class can currently match dates, addresses, links, phone numbers and transit information, and not other present properties such as grammar and spelling. They have been excluded from this framework as well.
 
-Additionally, `NSDataDetector`, while having the facility of extracting airline information from natural language text, does not extract the names of airlines, and only retrieves the flight number data. We are looking into this.
+Additionally, `NSDataDetector`, does not detect the following:
+* the name, job title, organization & phone number components of an address
+* the airline name component for transit information
+
+We are looking into this at the moment.
 
 ## Contact
 
