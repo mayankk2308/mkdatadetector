@@ -3,7 +3,7 @@
 //  MKDataDetector
 //
 //  Created by Jeet Parte on 22/07/17.
-//  Copyright © 2017 Mayank Kumar. All rights reserved.
+//  Copyright © 2017 Mayank Kumar. Available under the MIT license.
 //
 
 import Foundation

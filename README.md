@@ -18,13 +18,15 @@ While **Apple's** `NSDataDetector` is useful for extracting useful information f
 
 There are multiple installation options to choose from.
 
-### CocoaPods
+### CocoaPods (Preferred)
 
-To test pre-release versions:
-`pod 'MKDataDetector', :git => https://github.com/mayankk2308/mkdatadetector-swift.git`
-
-Once available on **CocoaPods**, simply use:
+To install via CocoaPods, add the following line to your **Podfile**:
 `pod 'MKDataDetector'`
+
+### Carthage
+
+To install via Carthage, add the following line to your **Cartfile**:
+`github "mayankk2308/mkdatadetector-swift" == 1.0.0`
 
 ### Manual
 
