@@ -38,6 +38,11 @@
                BlueprintName = "MKDataDetectorTests"
                ReferencedContainer = "container:MKDataDetector.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "MKDataDetectorTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <AdditionalOptions>

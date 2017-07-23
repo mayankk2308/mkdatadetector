@@ -16,13 +16,20 @@
 		A88DD83B1F123E83001D067A /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD83A1F123E83001D067A /* PhoneNumber.swift */; };
 		A88DD8411F12403C001D067A /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8401F12403C001D067A /* Link.swift */; };
 		A88DD8451F12407C001D067A /* TransitInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DD8441F12407C001D067A /* TransitInformation.swift */; };
-		A895A6F61F1A358E006A6C35 /* MKDataDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895A6F51F1A358E006A6C35 /* MKDataDetectorTests.swift */; };
 		A895A6F81F1A358E006A6C35 /* MKDataDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A874CCFB1F10F3260022AA85 /* MKDataDetector.framework */; };
 		A8A061A41F1FCB3400EF542E /* AliasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A061A31F1FCB3400EF542E /* AliasManager.swift */; };
 		A8B869171F1D138C003FC75A /* MultiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B869161F1D138C003FC75A /* MultiData.swift */; };
 		A8D560201F139F3E00553632 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */; };
 		A8EC757C1F14D67400D15369 /* CoreKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EC757B1F14D67400D15369 /* CoreKeys.swift */; };
 		A8F07E341F14724700E1A5C5 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F07E331F14724700E1A5C5 /* ResultType.swift */; };
+		C94DDE231F239E8F0049D156 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94DDE221F239E8F0049D156 /* DateExtensionTests.swift */; };
+		C94DDE251F23A1010049D156 /* AddressExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94DDE241F23A1010049D156 /* AddressExtensionTests.swift */; };
+		C94DDE271F23A1B80049D156 /* LinkExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94DDE261F23A1B80049D156 /* LinkExtensionTests.swift */; };
+		C94DDE291F23B03F0049D156 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94DDE281F23B03F0049D156 /* TestUtilities.swift */; };
+		C954BEB01F2487DD0030D00B /* PhoneNumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954BEAF1F2487DD0030D00B /* PhoneNumberExtensionTests.swift */; };
+		C954BEB21F2488C80030D00B /* TransitInformationExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954BEB11F2488C80030D00B /* TransitInformationExtensionTests.swift */; };
+		C954BEB41F248A850030D00B /* StringAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954BEB31F248A850030D00B /* StringAccessTests.swift */; };
+		C954BEB61F248A950030D00B /* MultiDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954BEB51F248A950030D00B /* MultiDataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,13 +55,20 @@
 		A88DD8401F12403C001D067A /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		A88DD8441F12407C001D067A /* TransitInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitInformation.swift; sourceTree = "<group>"; };
 		A895A6F31F1A358E006A6C35 /* MKDataDetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKDataDetectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A895A6F51F1A358E006A6C35 /* MKDataDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKDataDetectorTests.swift; sourceTree = "<group>"; };
 		A895A6F71F1A358E006A6C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8A061A31F1FCB3400EF542E /* AliasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliasManager.swift; sourceTree = "<group>"; };
 		A8B869161F1D138C003FC75A /* MultiData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiData.swift; sourceTree = "<group>"; };
 		A8D5601F1F139F3E00553632 /* UtilityExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
 		A8EC757B1F14D67400D15369 /* CoreKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreKeys.swift; sourceTree = "<group>"; };
 		A8F07E331F14724700E1A5C5 /* ResultType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		C94DDE221F239E8F0049D156 /* DateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		C94DDE241F23A1010049D156 /* AddressExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressExtensionTests.swift; sourceTree = "<group>"; };
+		C94DDE261F23A1B80049D156 /* LinkExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkExtensionTests.swift; sourceTree = "<group>"; };
+		C94DDE281F23B03F0049D156 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
+		C954BEAF1F2487DD0030D00B /* PhoneNumberExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberExtensionTests.swift; sourceTree = "<group>"; };
+		C954BEB11F2488C80030D00B /* TransitInformationExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitInformationExtensionTests.swift; sourceTree = "<group>"; };
+		C954BEB31F248A850030D00B /* StringAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAccessTests.swift; sourceTree = "<group>"; };
+		C954BEB51F248A950030D00B /* MultiDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +154,15 @@
 		A895A6F41F1A358E006A6C35 /* MKDataDetectorTests */ = {
 			isa = PBXGroup;
 			children = (
-				A895A6F51F1A358E006A6C35 /* MKDataDetectorTests.swift */,
+				C954BEB51F248A950030D00B /* MultiDataTests.swift */,
+				C954BEB31F248A850030D00B /* StringAccessTests.swift */,
+				C954BEB11F2488C80030D00B /* TransitInformationExtensionTests.swift */,
+				C954BEAF1F2487DD0030D00B /* PhoneNumberExtensionTests.swift */,
+				C94DDE261F23A1B80049D156 /* LinkExtensionTests.swift */,
+				C94DDE241F23A1010049D156 /* AddressExtensionTests.swift */,
+				C94DDE221F239E8F0049D156 /* DateExtensionTests.swift */,
 				A895A6F71F1A358E006A6C35 /* Info.plist */,
+				C94DDE281F23B03F0049D156 /* TestUtilities.swift */,
 			);
 			path = MKDataDetectorTests;
 			sourceTree = "<group>";
@@ -290,7 +311,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A895A6F61F1A358E006A6C35 /* MKDataDetectorTests.swift in Sources */,
+				C94DDE251F23A1010049D156 /* AddressExtensionTests.swift in Sources */,
+				C94DDE271F23A1B80049D156 /* LinkExtensionTests.swift in Sources */,
+				C954BEB21F2488C80030D00B /* TransitInformationExtensionTests.swift in Sources */,
+				C954BEB41F248A850030D00B /* StringAccessTests.swift in Sources */,
+				C94DDE291F23B03F0049D156 /* TestUtilities.swift in Sources */,
+				C954BEB01F2487DD0030D00B /* PhoneNumberExtensionTests.swift in Sources */,
+				C94DDE231F239E8F0049D156 /* DateExtensionTests.swift in Sources */,
+				C954BEB61F248A950030D00B /* MultiDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
