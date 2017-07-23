@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 extension MKDataDetectorService {
-    
+
     /// Retrieves address components matched from a given body of text along with the range of each substring that matched.
     ///
     /// - Parameter textBody: A body of natural language text.
@@ -18,8 +18,8 @@ extension MKDataDetectorService {
     public func extractAddresses(fromTextBody textBody: String) -> [AddressAnalysisResult]? {
         return extractData(fromTextBody: textBody, withResultTypes: [.address])
     }
-    
-    /// Retrieves address componenets matched from the given bodies of text along with the range of each substring that matched.
+
+    /// Retrieves address components matched from the given bodies of text along with the range of each substring that matched.
     ///
     /// - Parameter textBodies: A set of multiple bodies of natural language text.
     /// - Returns: An array of `[AddressAnalysisResult]` instances or `nil` if no address components could be found.
@@ -27,7 +27,7 @@ extension MKDataDetectorService {
     public func extractAddresses(fromTextBodies textBodies: [String]) -> [[AddressAnalysisResult]]? {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.address])
     }
-    
+
     /// Retrieves the geographic location of an address analysis result.
     ///
     /// - Parameters:
@@ -36,7 +36,7 @@ extension MKDataDetectorService {
     public func extractLocation(fromAnalysisResult result: AddressAnalysisResult, onCompletion completion: @escaping locationCompletion) {
         extractLocation(fromAddress: result.source, onCompletion: completion)
     }
-    
+
     /// Retrieves the geographic location of a valid address.
     ///
     /// - Parameters:
@@ -49,7 +49,7 @@ extension MKDataDetectorService {
             completion(location)
         }
     }
-    
+
     /// Retrieves the geographic location obtained from the first placemark.
     ///
     /// - Parameters:
