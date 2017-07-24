@@ -25,8 +25,8 @@ To install via CocoaPods, add the following line to your **Podfile**:
 
 ### Carthage
 
-To install via Carthage, add the following line to your **Cartfile**:
-`github "mayankk2308/mkdatadetector-swift" == 1.0.0`
+To install via Carthage, add the following line to your **Cartfile** along with the specific version of the framework you might prefer:
+`github "mayankk2308/mkdatadetector-swift"`
 
 ### Manual
 

@@ -3,7 +3,7 @@
 //  MKDataDetector
 //
 //  Created by Mayank Kumar on 7/11/17.
-//  Copyright © 2017 Mayank Kumar. Available under the MIT license.
+//  Copyright 2017 Mayank Kumar. Available under the MIT license.
 //
 
 /// Defines the types of detectable results that are available.

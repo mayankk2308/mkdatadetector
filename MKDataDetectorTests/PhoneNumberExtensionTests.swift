@@ -3,7 +3,7 @@
 //  MKDataDetector
 //
 //  Created by Jeet Parte on 23/07/17.
-//  Copyright © 2017 Mayank Kumar. Available under the MIT license.
+//  Copyright 2017 Mayank Kumar. Available under the MIT license.
 //
 
 import XCTest

@@ -3,7 +3,7 @@
 //  MKDataDetector
 //
 //  Created by Mayank Kumar on 7/19/17.
-//  Copyright © 2017 Mayank Kumar. Available under the MIT License.
+//  Copyright 2017 Mayank Kumar. Available under the MIT License.
 //
 
 import CoreLocation
