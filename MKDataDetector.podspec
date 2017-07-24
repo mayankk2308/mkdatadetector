@@ -7,6 +7,6 @@ Pod::Spec.new do |spec|
     spec.source = { :git => 'https://github.com/mayankk2308/mkdatadetector-swift.git', :tag => spec.version.to_s}
     spec.authors = {'Mayank Kumar' => 'mayankk2308@gmail.com', 'Jeet Parte' => 'jeetparte@gmail.com', 'Pinak Jalan' => 'pinak.jalan@me.com'}
     spec.homepage = 'https://mayankk2308.github.io/mkdatadetector-swift/'
-    spec.summary = 'An open-source convenience wrapper in Swift for NSDataDetector.'
+    spec.summary = 'A Swift wrapper for NSDataDetector that not only simplifies detection of dates, phone numbers, addresses, and more from natural language text, but also provides convenient use-cases for extracted information.'
     spec.source_files = 'MKDataDetector/*.swift'
 end

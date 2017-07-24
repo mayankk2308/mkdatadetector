@@ -21,12 +21,16 @@ There are multiple installation options to choose from.
 ### CocoaPods (Preferred)
 
 To install via CocoaPods, add the following line to your **Podfile**:
-`pod 'MKDataDetector'`
+```ruby
+pod 'MKDataDetector'
+```
 
 ### Carthage
 
 To install via Carthage, add the following line to your **Cartfile** along with the specific version of the framework you might prefer:
-`github "mayankk2308/mkdatadetector-swift"`
+```
+github "mayankk2308/mkdatadetector-swift"
+```
 
 ### Manual
 
