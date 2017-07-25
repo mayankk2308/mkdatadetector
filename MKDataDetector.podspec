@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name = 'MKDataDetector'
-    spec.version = '1.0.2'
+    spec.version = '1.0.3'
     spec.ios.deployment_target = '8.0'
     spec.osx.deployment_target = '10.9'
     spec.license = { :type => 'MIT', :file => 'LICENSE.md' }
