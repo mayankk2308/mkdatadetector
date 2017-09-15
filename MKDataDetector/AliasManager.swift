@@ -9,10 +9,10 @@
 import CoreLocation
 
 /// An address dictionary returned as part of an `AddressAnalysisResult`.
-public typealias AddressInfo = Dictionary<String, String>
+public typealias AddressInfo = Dictionary<NSTextCheckingKey, String>
 
 /// A transit dictionary returned as part of a `TransitAnalysisResult`.
-public typealias TransitInfo = Dictionary<String, String>
+public typealias TransitInfo = Dictionary<NSTextCheckingKey, String>
 
 /// An `AnalysisResult` that represents an occurence of a phone number found during analysis of a body of text.
 public typealias PhoneNumberAnalysisResult = AnalysisResult<String>

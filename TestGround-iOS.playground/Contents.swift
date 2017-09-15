@@ -23,7 +23,6 @@ let transits = ["Flight 2334", "EK 239 to Boston", "Emirates Airlines", "United 
 
 print("-----Single Body Date Results-----\n")
 if let singleBodyDateResults = dataDetectorService.extractDates(fromTextBody: textBody) {
-    let text = dataDetectorService.attributedText(fromAnalysisResults: singleBodyDateResults, withColor: UIColor.blue.cgColor)
     for result in singleBodyDateResults {
         print(result.source)
         print(result.data)

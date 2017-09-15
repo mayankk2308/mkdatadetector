@@ -12,19 +12,19 @@ import Foundation
 public struct Address {
     
     /// A key that corresponds to the city component of the address.
-    public static let city = NSTextCheckingCityKey
+    public static let city = NSTextCheckingKey.city
     
     /// A key that corresponds to the zip code or postal code component of the address.
-    public static let zip = NSTextCheckingZIPKey
+    public static let zip = NSTextCheckingKey.zip
     
     /// A key that corresponds to the street address component of the address.
-    public static let street = NSTextCheckingStreetKey
+    public static let street = NSTextCheckingKey.street
     
     /// A key that corresponds to the country component of the address.
-    public static let country = NSTextCheckingCountryKey
+    public static let country = NSTextCheckingKey.country
     
     /// A key that corresponds to the state or province component of the address.
-    public static let state = NSTextCheckingStateKey
+    public static let state = NSTextCheckingKey.state
 
     // MARK:- Keys for which detection is unavailable in the original NSDataDetector API:
     
@@ -47,7 +47,7 @@ public struct Address {
 public struct Transit {
     
     /// A key that corresponds to the flight component of a transit result.
-    public static let flight = NSTextCheckingFlightKey
+    public static let flight = NSTextCheckingKey.flight
 
     //Keys for which detection is unavailable in the original NSDataDetector API:
 
