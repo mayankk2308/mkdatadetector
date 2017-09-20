@@ -28,76 +28,37 @@ extension MKDataDetectorService {
         return extractData(fromTextBodies: textBodies, withResultTypes: [.date])
     }
     
-    /// Adds events to the default device calendar using a date analysis result.
+    
+    /// Generates an `EKEvent` for a given analysis result and event store.
     ///
     /// - Parameters:
-    ///   - result: A date analysis result.
-    ///   - endDate: The end date for the event.
-    ///   - completion: Provides confirmation or failure of the execution of the task.
-    /// - Note: The `endDate` parameter is optional. Not providing this property defaults the event to end an hour from the detected starting time. Additionally, this function automatically determines the event name. This may sometimes yield unexpected results.
-    public func addEventToDefaultCalendar(withAnalysisResult result: DateAnalysisResult, withEndDate endDate: Date? = nil, onCompletion completion: @escaping successCompletion) {
+    ///   - store: The event store for which to generate the event.
+    ///   - result: The `DateAnalysisResult` previously procured from analysis.
+    ///   - endDate: The user-specified end date -  defaults to an hour from start date otherwise.
+    /// - Returns: The generated event.
+    ///
+    /// - Note: This function auto-generates the event name based on date analysis. This feature requires additional testing and may not always yield satisfactory results.
+    public func generateEvent(forEventStore store: EKEventStore, withAnalysisResult result: DateAnalysisResult, withEndDate endDate: Date? = nil) -> EKEvent {
         let eventName = (result.source as NSString).replacingCharacters(in: result.rangeInSource, with: "").condensedWhitespace.trimmingCharacters(in: .whitespaces)
-        addEventToDefaultCalendar(withEventName: eventName, withStartDate: result.data, withEndDate: endDate, onCompletion: completion)
+        let extractedDate: Date = endDate != nil ? endDate! : result.data.addingTimeInterval(3600)
+        return generateEvent(forEventStore: store, withEventName: eventName, withStartDate: result.data, withEndDate: extractedDate)
     }
     
-    /// Adds events to the default device calendar given specific details.
-    ///
-    /// - Parameters:
-    ///   - name: The name of the event
-    ///   - startDate: The start date of the event
-    ///   - possibleEndDate: The end date of the event
-    ///   - completion: Provides confirmation or failure of the execution of the task.
-    /// - Note: The `endDate` parameter is optional. Not providing this property defaults the event to end an hour from the detected starting time.
-    public func addEventToDefaultCalendar(withEventName name: String, withStartDate startDate: Date, withEndDate possibleEndDate: Date? = nil, onCompletion completion: @escaping successCompletion) {
-        let eventStore = EKEventStore()
-        let endDate: Date
-        if let extractedEndDate = possibleEndDate {
-            endDate = extractedEndDate
-        } else {
-            endDate = startDate.addingTimeInterval(TimeInterval(3600))
-        }
-        switch EKEventStore.authorizationStatus(for: .event) {
-        case .authorized:
-            insertEvent(withEventStore: eventStore, withEventName: name, withStartDate: startDate, withEndDate: endDate, onCompletion: completion)
-            break
-        default:
-            eventStore.requestAccess(to: .event) { access, error in
-                if access {
-                    self.insertEvent(withEventStore: eventStore, withEventName: name, withStartDate: startDate, withEndDate: endDate, onCompletion: completion)
-                }
-                else {
-                    if let errorMessage = error {
-                        print("Calendar access error: \(errorMessage)")
-                    }
-                    completion(false)
-                }
-            }
-            completion(false)
-        }
-    }
     
-    /// Helper for inserting events into the event store.
+    /// Generates an `EKEvent` for a given set of precise data along with an event store.
     ///
     /// - Parameters:
-    ///   - store: The event store.
+    ///   - store: The event store for which to generate the event.
     ///   - name: The name of the event.
-    ///   - startDate: The start date of the event.
-    ///   - endDate: The end date of the event
-    ///   - completion: Provides confirmation or failure of the executation of the task.
-    internal func insertEvent(withEventStore store: EKEventStore, withEventName name: String, withStartDate startDate: Date, withEndDate endDate: Date, onCompletion completion: successCompletion) {
+    ///   - startDate: The start date/time of the event.
+    ///   - endDate: The end date/time of the event.
+    /// - Returns: The generated event.
+    public func generateEvent(forEventStore store: EKEventStore, withEventName name: String, withStartDate startDate: Date, withEndDate endDate: Date) -> EKEvent {
         let event = EKEvent(eventStore: store)
         event.title = name
         event.startDate = startDate
         event.endDate = endDate
-        event.alarms = [EKAlarm(relativeOffset: TimeInterval(-900))]
-        event.calendar = store.defaultCalendarForNewEvents
-        do {
-            try store.save(event, span: .thisEvent, commit: true)
-            completion(true)
-        } catch {
-            print(error)
-            completion(false)
-        }
+        return event
     }
     
 }

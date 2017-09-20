@@ -11,10 +11,10 @@
             buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A895A6F21F1A358E006A6C35"
+               BlueprintIdentifier = "A88749051F6C538500013F25"
                BuildableName = "MKDataDetectorTests.xctest"
                BlueprintName = "MKDataDetectorTests"
                ReferencedContainer = "container:MKDataDetector.xcodeproj">
@@ -27,25 +27,28 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A895A6F21F1A358E006A6C35"
+               BlueprintIdentifier = "A88749051F6C538500013F25"
                BuildableName = "MKDataDetectorTests.xctest"
                BlueprintName = "MKDataDetectorTests"
                ReferencedContainer = "container:MKDataDetector.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "MKDataDetectorTests">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A88749051F6C538500013F25"
+            BuildableName = "MKDataDetectorTests.xctest"
+            BlueprintName = "MKDataDetectorTests"
+            ReferencedContainer = "container:MKDataDetector.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -63,7 +66,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A895A6F21F1A358E006A6C35"
+            BlueprintIdentifier = "A88749051F6C538500013F25"
             BuildableName = "MKDataDetectorTests.xctest"
             BlueprintName = "MKDataDetectorTests"
             ReferencedContainer = "container:MKDataDetector.xcodeproj">
@@ -78,15 +81,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A895A6F21F1A358E006A6C35"
-            BuildableName = "MKDataDetectorTests.xctest"
-            BlueprintName = "MKDataDetectorTests"
-            ReferencedContainer = "container:MKDataDetector.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
