@@ -37,7 +37,7 @@ extension MKDataDetectorService {
     ///   - endDate: The user-specified end date -  defaults to an hour from start date otherwise.
     /// - Returns: The generated event.
     ///
-    /// - Note: This function auto-generates the event name based on date analysis. This feature requires additional testing and may not always yield satisfactory results.
+    /// - Note: This function auto-generates the event name based on date analysis. This feature requires additional testing and may not always yield satisfactory results. The default generator is exposed for use.
     public func generateEvent(forEventStore store: EKEventStore, withAnalysisResult result: DateAnalysisResult, withEndDate endDate: Date? = nil) -> EKEvent {
         let eventName = (result.source as NSString).replacingCharacters(in: result.rangeInSource, with: "").condensedWhitespace.trimmingCharacters(in: .whitespaces)
         let extractedDate: Date = endDate != nil ? endDate! : result.data.addingTimeInterval(3600)

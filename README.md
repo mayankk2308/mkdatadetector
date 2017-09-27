@@ -6,7 +6,7 @@ A simple convenience wrapper in Swift for data detection from natural language t
 
 ## Purpose
 
-While **Apple's** `NSDataDetector` is useful for extracting useful information from natural language text, it can sometimes be a little cumbersome to work with. `MKDataDetector` streamlines the original API, simplifies its usage, and builds on it with additional supporting capabilities that use information effectively.
+`MKDataDetector` streamlines `NSDataDetector` and builds on it with additional supporting capabilities that use information effectively.
 
 ## Requirements
 
@@ -41,7 +41,7 @@ github "mayankk2308/mkdatadetector-swift"
 
 ## Usage
 
-To keep things simple, `MKDataDetectorService` is packaged as a set of extensions that compartmentalize its following capabilities:
+`MKDataDetectorService` is packaged as a set of extensions that compartmentalize its following capabilities:
 
 * Date - date extraction
 * Address - address extraction
@@ -82,7 +82,7 @@ let dataDetectorService: MKDataDetectorService = MKDataDetectorService()
 
 ### Result Handling
 
-For convenience, a generic set of `AnalysisResult<T>` structures is consistently returned for extraction/analysis results. An enumeration called `ResultType` is also included for convenient identification of results.
+A generic set of `AnalysisResult<T>` structures is consistently returned for extraction/analysis results. An enumeration called `ResultType` is also included for identification of results.
 
 `AnalysisResult<T>` contains **5** fields:
 * Source (`source`) - the source/original complete `String` from which data was detected
@@ -91,14 +91,14 @@ For convenience, a generic set of `AnalysisResult<T>` structures is consistently
 * Data Type (`dataType`) - the type `ResultType` of data returned
 * Data (`data`) - the data `T` extracted from the source input
 
-Additionally, for convenience, the generic struct has a `typealias` per result type:
+The generic struct has a `typealias` per result type:
 * `DateAnalysisResult` - for `AnalysisResult<Date>`
 * `URLAnalysisResult` - for `AnalysisResult<URL>`
 * `AddressAnalysisResult` - for `AnalysisResult<AddressInfo>`
 * `PhoneNumberAnalysisResult` - for `AnalysisResult<String>`
 * `TransitAnalysisResult` - for `AnalysisResult<TransitInfo>`
 
-Because the address and transit information results are structures themselves (`[String : String]`), they are conveniently typealiased as `AddressInfo` and `TransitInfo`. For convenience, `Address` and `Transit` **_structs_** with the associated keys are provided for easy access. For example, to access the zip-code in an extracted address, simply use the key `Address.zip`.
+The address and transit information results are structures (`[String : String]`) typealiased as `AddressInfo` and `TransitInfo`. `Address` and `Transit` **_structs_** with their associated dictionary keys make information lookup simple. For example, to access the zip-code in an extracted address, simply use the key `Address.zip`.
 
 ### Implementation
 
@@ -151,7 +151,7 @@ An implementation for extracting multiple types from multiple text bodies is als
 
 ### Additional Capabilities
 
-Besides data detection, `MKDataDetector` also provides handy convenience functions to use detected information.
+`MKDataDetector` also provides handy convenience functions to use detected information.
 
 To retrieve precise **location information** from a **valid** `String` address:
 ```swift
@@ -171,31 +171,15 @@ dataDetectorService.extractLocation(fromAnalysisResult: sampleAnalysisResult) { 
 }
 ```
 
-For **calendar integration**, you can easily create and add events to the default calendar:
+For **calendar integration**, you can easily create an `EKEvent` from a `DateAnalysisResult`:
 ```swift
-dataDetectorService.addEventToDefaultCalendar(withEventName: sampleText, withStartDate: sampleStartDate, withEndDate: sampleEndDate) { success in
-    if success {
-        // event added
-    }
-}
+let event: EKEvent = dataDetectorService.generateEvent(fromEventStore: sampleEventStore, withAnalysisResult: sampleResult)
 ```
+A __*withEndDate*__ parameter, not shown above, is optional. Not providing a value defaults the event to end after an hour.
 
-Note that newer versions of iOS/macOS require information from your application's `.plist` citing a reason for accessing the user's calendar.
+A more generic event generator is also available, which may be preferred if 100% event naming consistency is expected. Automatic processing of event names from `DateAnalysisResult` objects needs more testing.
 
-If you have a `DateAnalysisResult`, you can opt for easier event creation that also extracts the event name automatically:
-```swift
-dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: sampleResult, withEndDate: sampleEndDate) { success in
-    if success {
-        // event added
-    }
-}
-```
-
-Note that automatic event name extraction may yield unexpected event names in rare cases and requires more testing. For concrete support, use the former function instead.
-
-Additionally, the __*withEndDate*__ parameter is optional. Not providing a value defaults the event to end after an hour.
-
-It is sometimes also useful to highlight detected data for the user in the user interface before action is taken. This can typically be accomplished by setting attributed text properties for the various text-oriented views across **macOS** and **iOS**. Given a set of retrieved `AnalysisResult<T>` (the default result type for any extraction operation), you can generate colored attributed texts:
+Given a set of retrieved `AnalysisResult<T>` (the default result type for any extraction operation), you can generate **colored attributed texts**:
 ```swift
 if let attributedText = dataDetectorService.attributedText(fromAnalysisResults: sampleResults, withColor: UIColor.blue.cgcolor) {
     // set UI component
@@ -226,40 +210,32 @@ The output is similar for `party`:
 
 The output format will be uniform for other types of data features as well, with the `data` field returning objects of the appropriate type in each case.
 
-You can easily make use of this data, for instance, by adding the events to the user's calendar:
+You can easily make use of this data, for instance, by generating an event:
 ```swift
-dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: meetingAnalysisResult) { success in
-    if success {
-        // event added to default calendar as a "Meeting" with alarm set for "9pm tomorrow" - lasting an hour long (default)
-    }
-}
+let meetingEvent = dataDetectorService.generateEvent(withEventStore: someEventStore, withAnalysisResult: meetingAnalysisResult)
+// creates an event detailing a meeting for 9pm tomorrow, lasting an hour
 
-dataDetectorService.addEventToDefaultCalendar(withAnalysisResult: partyAnalysisResult) { success in
-    if success {
-        // event added to default calendar as a "Party" with alarm set for "8pm next Friday" - lasting an hour long (default)
-    }
-}
+let partyEvent = dataDetectorService.generateEvent(withEventStore: someEventStore, withAnalysisResult: partyAnalysisResult)
+// creates an event detailing a party at 8pm next Friday, lasting an hour
 ```
 
-Let's assume that the `meeting` text was embedded in a `UILabel` or equivalent text-oriented view. Let's call it `meetingLabel`. It was also expanded to add *" and next Friday at 5pm"*. You can easily update the label to display the **multiple detected** pieces of information (typically a substring of the text in the label):
+Assume that the `meeting` text was embedded in a `UILabel` called `meetingLabel`. It was also expanded to add *" and next Friday at 5pm"*. You can update the label to display the **multiple detected** parts of the text:
 ```swift
-if let attributedText = dataDetectorService.attributedText(withAnalysisResults: meetingAnalysisResults, withColor: UIColor.purple.cgcolor) {
+if let attributedText = dataDetectorService.attributedText(withAnalysisResults: meetingAnalysisResult, withColor: UIColor.purple.cgcolor) {
     meetingLabel.attributedText = attributedText
 }
 ```
 
-Your `meetingLabel` will now display the original text with the detected information in purple (bold here):
+`meetingLabel` will now display the original text with the detected information in purple (bold here):
 *"Meeting __at 9pm tomorrow__ and __next Friday at 5pm__"*.
 
 ### Limitations
 
-According to Apple's documentation on `NSDataDetector`, the class can currently match dates, addresses, links, phone numbers and transit information, and not other present properties such as grammar and spelling. They have been excluded from this framework as well.
+Apple's documentation on `NSDataDetector` states that the class can currently match dates, addresses, links, phone numbers and transit information, and not other present properties such as grammar and spelling.
 
 Additionally, `NSDataDetector` does not detect:
 * the **name**, **job title**, **organization** & **phone number** components of an address, although keys for the same are provided within the original API
 * the **airline name** component for transit information, although a key for this is available in the original API
-
-We are looking into this at the moment.
 
 ## Contact
 
