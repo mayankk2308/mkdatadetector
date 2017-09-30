@@ -1,9 +1,15 @@
+# 2.0.0
+* Migrates to Swift 4.0.
+* Removes ability to add to calendar.
+* Adds ability to generate `EKEvent` objects instead.
+* More concise documentation.
+
 # 1.0.3
 Change Swift version to 3.0 to attempt **CocoaDocs** resolution.
 
 # 1.0.2
-* Documentation update
-* Removal of **(c)** symbol from **swift** files
+* Documentation update.
+* Removal of **(c)** symbol from **swift** files.
 
 # 1.0.1
 Minor documentation changes and **CocoaPods** page fix.
