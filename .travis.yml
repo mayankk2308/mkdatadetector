@@ -1,5 +1,4 @@
 language: objective-c
 osx_image: xcode9
 xcode_project: MKDataDetector.xcodeproj
-xcode_scheme: MKDataDetectorTests
-xcode_sdk: macosx10.13
+xcode_scheme: MKDataDetector
