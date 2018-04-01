@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode9.3beta
 xcode_project: MKDataDetector.xcodeproj
 xcode_scheme: MKDataDetector
 script: xcodebuild clean build -sdk iphonesimulator -workspace MKDataDetector.xcworkspace -scheme MKDataDetector CODE_SIGNING_REQUIRED=NO
