@@ -47,7 +47,7 @@ public extension String {
     private func retrieveMappedData<T>(withResultType type: ResultType) -> [T]? {
         let dataDetectorService = MKDataDetectorService()
         guard let results: [AnalysisResult<T>] = dataDetectorService.extractData(fromTextBody: self, withResultTypes: [type]) else { return nil }
-        return results.flatMap { $0.data }
+        return results.compactMap { $0.data }
     }
     
 }
