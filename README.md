@@ -1,5 +1,5 @@
 # **MKDataDetector**
-[![Build Status](https://travis-ci.org/mayankk2308/mkdatadetector-swift.svg?branch=master)](https://travis-ci.org/mayankk2308/mkdatadetector-swift)
+[![Build Status](https://travis-ci.org/mayankk2308/mkdatadetector.svg?branch=master)](https://travis-ci.org/mayankk2308/mkdatadetector)
 ![Platform badge](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS-blue.svg)
 
 A simple convenience wrapper in Swift for data detection from natural language text that organizes data extraction and handling.
