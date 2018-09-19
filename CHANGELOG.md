@@ -1,5 +1,8 @@
+# 2.0.2
+* Conforms to Swift **4.2**.
+
 # 2.0.1
-* Conforms to Swift 4.1.
+* Conforms to Swift **4.1**.
 
 # 2.0.0
 * Migrates to Swift 4.0.
