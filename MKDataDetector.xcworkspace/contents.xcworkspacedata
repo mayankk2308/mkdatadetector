@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../Desktop/TestGround-tvOS.playground">
+      location = "absolute:/Users/mayank/Library/CloudStorage/iCloud Drive/Documents/Projects/MKDataDetector/TestGround-tvOS.playground">
    </FileRef>
    <FileRef
       location = "group:TestGround-iOS.playground">
