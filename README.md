@@ -14,6 +14,8 @@ A simple convenience wrapper in Swift for data detection from natural language t
 * Swift 3.1+
 * macOS 10.9+
 * iOS 8.0+
+* tvOS 9.0+
+* watchOS 2.0+
 
 ## Installation
 
