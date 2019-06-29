@@ -1,3 +1,7 @@
+# 3.0.0
+* Conforms to Swift **5**.
+* Adds support for **tvOS** and **watchOS**.
+
 # 2.0.2
 * Conforms to Swift **4.2**.
 
